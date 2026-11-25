@@ -1,0 +1,2 @@
+export const DEVICE_EDIT_ACTION_SAVE = 1;
+export const DEVICE_EDIT_ACTION_CONNECT = 2;

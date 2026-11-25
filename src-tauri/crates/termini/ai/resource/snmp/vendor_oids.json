@@ -1,0 +1,2622 @@
+{
+ "generic": [
+  {
+   "name": "CPU Usage",
+   "candidates": [
+    {
+     "oid": "1.3.6.1.4.1.33333.1.1.1.0",
+     "op": "get",
+     "desc": "5秒cpu利用率"
+    },
+    {
+     "oid": "1.3.6.1.4.1.35047.1.3.0",
+     "op": "get",
+     "desc": "cpu利用率"
+    },
+    {
+     "oid": "1.3.6.1.4.1.2021.11.11.0",
+     "op": "get",
+     "desc": "cpu利用率",
+     "expr": "100-A"
+    }
+   ]
+  },
+  {
+   "name": "Memory Usage",
+   "candidates": [
+    {
+     "oid": "1.3.6.1.4.1.52.2501.1.270.4.1.1.6",
+     "op": "walk",
+     "desc": "内存使用大小（used）A",
+     "expr": "A/B*100"
+    },
+    {
+     "oid": "1.3.6.1.4.1.52.2501.1.270.4.1.1.4",
+     "op": "walk",
+     "desc": "内存总量（total）B",
+     "expr": "A/B*100"
+    },
+    {
+     "oid": "1.3.6.1.4.1.2021.4.5.0",
+     "op": "get",
+     "desc": "总内存节点A",
+     "expr": "(A-B-C-D)/A*100"
+    },
+    {
+     "oid": "1.3.6.1.4.1.2021.4.6.0",
+     "op": "get",
+     "desc": "物理空闲内存B",
+     "expr": "(A-B-C-D)/A*100"
+    },
+    {
+     "oid": "1.3.6.1.4.1.2021.4.14.0",
+     "op": "get",
+     "desc": "buffer占用内存数量C",
+     "expr": "(A-B-C-D)/A*100"
+    },
+    {
+     "oid": "1.3.6.1.4.1.2021.4.15.0",
+     "op": "get",
+     "desc": "Cache占用内存数量D",
+     "expr": "(A-B-C-D)/A*100"
+    },
+    {
+     "oid": "1.3.6.1.2.1.1.2.0",
+     "op": "get",
+     "desc": "利用率",
+     "paired": true
+    }
+   ]
+  }
+ ],
+ "vendors": [
+  {
+   "enterprise": 9,
+   "name": "Cisco",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.9.2.1.58.0",
+       "op": "get",
+       "desc": "5分钟平均利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.9.9.109.1.1.1.1.8",
+       "op": "walk",
+       "desc": "5分钟利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.9.6.1.101.1.7.0",
+       "op": "get",
+       "desc": "5分钟平均利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.9.9.48.1.1.1.5",
+       "op": "walk",
+       "desc": "使用",
+       "expr": "A /(A+B) * 100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.9.9.48.1.1.1.6",
+       "op": "walk",
+       "desc": "闲置",
+       "expr": "A /(A+B) * 100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.9.9.109.1.1.1.1.12",
+       "op": "walk",
+       "desc": "使用",
+       "expr": "A / (A+B) * 100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.9.9.109.1.1.1.1.13",
+       "op": "walk",
+       "desc": "闲置",
+       "expr": "A / (A+B) * 100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 11,
+   "name": "HP",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.11.2.14.11.5.1.9.6.1.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.11.2.3.7.11.33.4.2.1.2.2.1.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.11.2.14.11.5.1.1.2.2.1.1.7.1",
+       "op": "walk",
+       "desc": "内存使用大小（used）A",
+       "expr": "(A/B)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.11.2.14.11.5.1.1.2.2.1.1.5.1",
+       "op": "walk",
+       "desc": "内存总量（total）B",
+       "expr": "(A/B)*100"
+      }
+     ]
+    },
+    {
+     "name": "Temperature",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.9.9.13.1.3.1.2",
+       "op": "walk",
+       "desc": "温度描述",
+       "expr": "B"
+      },
+      {
+       "oid": "1.3.6.1.4.1.9.9.13.1.3.1.3",
+       "op": "walk",
+       "desc": "温度值",
+       "expr": "B"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 52,
+   "name": "Enterasys",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.52.2501.1.270.2.1.1.2",
+       "op": "walk",
+       "desc": "5秒cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.52.2501.1.270.4.1.1.6",
+       "op": "walk",
+       "desc": "内存使用大小（used）A",
+       "expr": "A/B*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.52.2501.1.270.4.1.1.4",
+       "op": "walk",
+       "desc": "内存总量（total）B",
+       "expr": "A/B*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 89,
+   "name": "Enterprise 89",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.89.35.1.53.0",
+       "op": "get",
+       "desc": "CPU利用率"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 171,
+   "name": "D-Link",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.171.12.1.1.6.1",
+       "op": "walk",
+       "desc": "5秒"
+      },
+      {
+       "oid": "1.3.6.1.4.1.171.12.1.1.6.2",
+       "op": "walk",
+       "desc": "1分钟平均利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.171.12.1.1.6.3",
+       "op": "walk",
+       "desc": "5分钟平均利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.171.12.1.1.9.1.4.0",
+       "op": "get",
+       "desc": "使用率"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 674,
+   "name": "Dell",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.674.10895.5000.2.6132.1.1.1.1.4.4.0",
+       "op": "get",
+       "desc": "cpu利用率",
+       "paired": true
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.674.10895.5000.2.6132.1.1.1.1.4.2",
+       "op": "walk",
+       "desc": "总内存节点A",
+       "expr": "(1-B/A)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.674.10895.5000.2.6132.1.1.1.1.4.1",
+       "op": "walk",
+       "desc": "空闲内存节点B",
+       "expr": "(1-B/A)*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 1916,
+   "name": "Extreme Networks",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.1916.1.32.1.4.1.8",
+       "op": "walk",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.1916.1.32.2.2.1.2",
+       "op": "walk",
+       "desc": "总的内存",
+       "expr": "(A-B)/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.1916.1.32.2.2.1.3",
+       "op": "walk",
+       "desc": "可用内存",
+       "expr": "(A-B)/A*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 1991,
+   "name": "Foundry Networks",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.1991.1.1.2.1.50.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.1991.1.1.2.1.53.0",
+       "op": "get",
+       "desc": "内存利用率"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 2011,
+   "name": "Huawei",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2011.6.1.1.1.4",
+       "op": "walk",
+       "desc": "5分钟平均利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.3.4.1.2",
+       "op": "walk",
+       "desc": "5分钟平均利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.1.1.1.3",
+       "op": "walk",
+       "desc": "1分钟平均利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.1.1.1.2",
+       "op": "walk",
+       "desc": "5秒平均利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.23.1.18.1.3.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.2.4.12.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.4.1.7",
+       "op": "walk",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.6.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.5.25.31.1.1.1.1.3",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.4",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.6",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.1.1.1",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.1.1.4",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.10.1.1",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.10.1.4",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.8.0",
+       "op": "get"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.4.1.8",
+       "op": "walk"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.3.5.1.1.2",
+       "op": "walk",
+       "desc": "总内存节点A",
+       "expr": "((A-B)/A*100) 或  (C/A*100)"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.3.5.1.1.3",
+       "op": "walk",
+       "desc": "空闲内存节点B",
+       "expr": "((A-B)/A*100) 或  (C/A*100)"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.3.5.1.1.4",
+       "op": "walk",
+       "desc": "已使用内存节点C",
+       "expr": "((A-B)/A*100) 或  (C/A*100)"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.1.2.1.1.2",
+       "op": "walk",
+       "desc": "总内存节点A",
+       "expr": "((A-B)/A*100) 或  (C/A*100)"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.1.2.1.1.3",
+       "op": "walk",
+       "desc": "空闲内存节点B",
+       "expr": "((A-B)/A*100) 或  (C/A*100)"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.1.2.1.1.4",
+       "op": "walk",
+       "desc": "已使用内存内存节点C",
+       "expr": "((A-B)/A*100) 或  (C/A*100)"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.2.5.1",
+       "op": "walk",
+       "desc": "已使用内存列求和(used)A",
+       "expr": "A/(A+B)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.2.5.2",
+       "op": "walk",
+       "desc": "空闲内存值列求和(free)B",
+       "expr": "A/(A+B)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.5.25.31.1.1.1.1.3",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.4",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.8",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.10.1.1",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.10.1.5",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.1.1.1",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.1.1.5",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 2021,
+   "name": "Net-SNMP (Linux/UCD)",
+   "indicators": [
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.4.5.0",
+       "op": "get",
+       "desc": "总内存节点A",
+       "expr": "(1-B/A)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2021.4.6.0",
+       "op": "get",
+       "desc": "空闲内存节点B",
+       "expr": "(1-B/A)*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 2272,
+   "name": "Nortel",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2272.1.1.20.0",
+       "op": "get",
+       "desc": "cpu利用率",
+       "expr": " "
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2272.1.1.46.0",
+       "op": "get",
+       "desc": "总内存节点A",
+       "expr": "(A*1024-B)/(A*1024)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2272.1.1.48.0",
+       "op": "get",
+       "desc": "空闲内存节点B",
+       "expr": "(A*1024-B)/(A*1024)*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 2636,
+   "name": "Juniper",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2636.3.1.13.1.8.9.2.0.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2636.3.1.13.1.8.9",
+       "op": "walk",
+       "desc": "CPU利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2636.3.1.16.0",
+       "op": "get",
+       "desc": "mem利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2636.3.1.13.1.11.9",
+       "op": "walk",
+       "desc": "mem利用率"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 3224,
+   "name": "NetScreen",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3224.16.1.1.0",
+       "op": "get",
+       "desc": "平均CPU利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3224.16.1.2.0",
+       "op": "get",
+       "desc": "1mCPU利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3224.16.1.3.0",
+       "op": "get",
+       "desc": "5mCPU利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3224.16.1.4.0",
+       "op": "get",
+       "desc": "5mCPU利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3224.16.2.1.0",
+       "op": "get",
+       "desc": "总内存大小",
+       "expr": "(1-B/A)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3224.16.2.2.0",
+       "op": "get",
+       "desc": "空闲内存大小",
+       "expr": "(1-B/A)*100"
+      }
+     ]
+    },
+    {
+     "name": "Current Connections",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3224.16.3.2.0",
+       "op": "get",
+       "desc": "当前连接数"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 3320,
+   "name": "Enterprise 3320",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3320.9.109.1.1.1.1.3",
+       "op": "walk",
+       "desc": "1分钟平均利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3320.3.6.1.0",
+       "op": "get",
+       "desc": "CPU利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3320.9.100.1.5",
+       "op": "walk",
+       "expr": "A*0.01"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3320.9.48.1",
+       "op": "walk"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3320.9.48.1.0",
+       "op": "get"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3320.3.6.5.0",
+       "op": "get",
+       "expr": "B/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3320.3.6.6.0",
+       "op": "get",
+       "expr": "B/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3320.9.100.1.6",
+       "op": "walk",
+       "expr": "A*0.01"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 3375,
+   "name": "F5",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.1.1.2.20.29.0",
+       "op": "get",
+       "desc": "CPU利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.1.7.1.1.0",
+       "op": "get",
+       "desc": "总内存节点A",
+       "expr": "(1-B/A)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3375.2.1.7.1.2.0",
+       "op": "get",
+       "desc": "空闲内存节点B",
+       "expr": "(1-B/A)*100"
+      }
+     ]
+    },
+    {
+     "name": "RAM Cache Name List",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.2.6.7.1.2.1.1",
+       "op": "walk",
+       "desc": "RAM缓存名称列表"
+      }
+     ]
+    },
+    {
+     "name": "Pool Name List",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.2.5.1.2.1.1",
+       "op": "walk",
+       "desc": "Pool名称列表"
+      }
+     ]
+    },
+    {
+     "name": "Node Address List",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.2.4.1.2.1.2",
+       "op": "walk",
+       "desc": "Node地址列表"
+      }
+     ]
+    },
+    {
+     "name": "Member Name List",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.2.5.3.2.1.1",
+       "op": "walk",
+       "desc": "Member名称列表"
+      }
+     ]
+    },
+    {
+     "name": "TCP Sessions Per Second",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.1.1.2.12.2.0",
+       "op": "get",
+       "desc": "每秒TCP会话数"
+      }
+     ]
+    },
+    {
+     "name": "Device Uptime",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.1.6.6.0",
+       "op": "get",
+       "desc": "设备运行时间"
+      }
+     ]
+    },
+    {
+     "name": "Chassis Temperature",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.1.3.2.3.2.1.2",
+       "op": "walk",
+       "desc": "设备运行时间"
+      }
+     ]
+    },
+    {
+     "name": "Fan Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.1.3.2.3.2.1.2",
+       "op": "walk",
+       "desc": "风扇状态",
+       "paired": true
+      }
+     ]
+    },
+    {
+     "name": "Power Supply Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.1.3.2.2.2.1.2",
+       "op": "walk",
+       "desc": "电源状态",
+       "paired": true
+      }
+     ]
+    },
+    {
+     "name": "HA Failover Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3375.2.1.14.3.2.0",
+       "op": "get",
+       "desc": "双机故障切换"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 3807,
+   "name": "Enterprise 3807",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3807.3.1.1.1.3",
+       "op": "walk",
+       "desc": "CPU利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3807.3.1.1.1.4",
+       "op": "walk",
+       "desc": "总内存节点A",
+       "expr": "(A-B)/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3807.3.1.1.1.5",
+       "op": "walk",
+       "desc": "空闲内存节点B",
+       "expr": "(A-B)/A*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 3902,
+   "name": "ZTE",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3902.3.3.1.1.6",
+       "op": "walk",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.3.3.1.1.5",
+       "op": "walk",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.15.2.2.1.1.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.15.2.10.1.3.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.15.2.11.1.1.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.15.2.3.1.3",
+       "op": "walk",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.15.2.6.1.3",
+       "op": "walk",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.3902.3.3.1.1.4",
+       "op": "walk",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.15.2.2.1.5.0",
+       "op": "get",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.15.2.11.1.5.0",
+       "op": "get",
+       "desc": "内存空闲率",
+       "expr": "100-A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.15.2.10.1.5.0",
+       "op": "get",
+       "desc": "内存空闲率",
+       "expr": "100-A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.15.2.3.1.5",
+       "op": "walk",
+       "desc": "内存空闲率",
+       "expr": "100-A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.3902.15.2.6.1.5",
+       "op": "walk",
+       "desc": "内存空闲率",
+       "expr": "100-A"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 4881,
+   "name": "Ruijie",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.4881.1.1.10.2.36.1.1.1.0",
+       "op": "get"
+      },
+      {
+       "oid": "1.3.6.1.4.1.4881.1.1.10.2.36.1.1.2.0",
+       "op": "get"
+      },
+      {
+       "oid": "1.3.6.1.4.1.4881.1.1.10.2.36.1.1.3.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.4881.1.1.10.2.35.1.1.1.3",
+       "op": "walk",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.4881.1.1.10.2.35.1.1.1.3.0",
+       "op": "get",
+       "desc": "内存利用率"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 5651,
+   "name": "Enterprise 5651",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.5651.3.66.6.18.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.6.7.2.100.1.8.1.3",
+       "op": "walk",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.3.20.1.1.3.5.1.10",
+       "op": "walk",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.6.7.2.100.1.11.2.0",
+       "op": "get",
+       "desc": "cpu利用率",
+       "expr": "100-A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.100.1.8.1.3.1",
+       "op": "walk",
+       "desc": "cpu利用率",
+       "paired": true
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.5651.3.20.1.1.1.9.0",
+       "op": "get",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.3.66.6.17.0",
+       "op": "get",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.6.7.2.100.1.8.1.8",
+       "op": "walk",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.6.7.2.100.1.8.1.7",
+       "op": "walk",
+       "desc": "内存利用率",
+       "expr": "(B*100)/A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.6.7.2.100.1.8.1.8",
+       "op": "walk",
+       "desc": "内存利用率",
+       "expr": "(B*100)/A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.6.7.2.100.1.11.6",
+       "op": "walk",
+       "desc": "内存利用率",
+       "expr": "(B*100)/A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.6.7.2.100.1.11.7",
+       "op": "walk",
+       "desc": "内存利用率",
+       "expr": "(B*100)/A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.100.1.8.1.4",
+       "op": "walk",
+       "desc": "内存利用率",
+       "expr": "100-(B*100)/A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.5651.100.1.8.1.5",
+       "op": "walk",
+       "desc": "内存利用率",
+       "expr": "100-(B*100)/A"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 6339,
+   "name": "Enterprise 6339",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.6339.2.5.6.10.1.2",
+       "op": "walk",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.99.1.10.0",
+       "op": "get",
+       "desc": "cpu利用率",
+       "expr": "100-A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.100.1.11.2.0",
+       "op": "get",
+       "desc": "cpu利用率",
+       "expr": "100-A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.99.1.8.0",
+       "op": "get",
+       "desc": "cpu利用率",
+       "expr": "100-A"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.100.1.8.1.3",
+       "op": "walk",
+       "desc": "cpu利用率",
+       "expr": "100-A"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.6339.99.1.13.0",
+       "op": "get",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.100.1.8.1.8",
+       "op": "walk",
+       "desc": "内存利用率",
+       "expr": "A/B*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.100.1.8.1.7",
+       "op": "walk",
+       "desc": "内存利用率",
+       "expr": "A/B*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.99.1.13",
+       "op": "walk",
+       "desc": "内存利用率",
+       "expr": "A/B*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.99.1.12",
+       "op": "walk",
+       "desc": "内存利用率",
+       "expr": "A/B*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.2.5.6.6.0",
+       "op": "get",
+       "desc": "内存利用率",
+       "expr": "A/B*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.2.5.6.5.0",
+       "op": "get",
+       "desc": "内存利用率",
+       "expr": "A/B*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.100.1.11.7.0",
+       "op": "get",
+       "desc": "内存利用率",
+       "expr": "A/B*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.100.1.11.6.0",
+       "op": "get",
+       "desc": "内存利用率",
+       "expr": "A/B*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.99.1.9.0",
+       "op": "get",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.6339.99.1.7.0",
+       "op": "get",
+       "paired": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 6486,
+   "name": "Alcatel-Lucent",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.6486.800.1.2.1.16.1.1.1.14.0",
+       "op": "get",
+       "desc": "最后1分钟平均CPU利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.6486.800.1.2.1.16.1.1.1.10.0",
+       "op": "get",
+       "desc": "最后1分钟平均内存利用率"
+      }
+     ]
+    },
+    {
+     "name": "CPU Temperature",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.6486.800.1.1.1.3.1.1.3.1.5",
+       "op": "walk",
+       "desc": "cpu温度"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 7564,
+   "name": "Array Networks",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.7564.30.1.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "SSL Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.7564.20.1.1.0",
+       "op": "get",
+       "desc": "总内存节点A"
+      }
+     ]
+    },
+    {
+     "name": "SSL Connections Opened",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.7564.20.2.1.0",
+       "op": "get",
+       "desc": "打开的SSL连接总数"
+      }
+     ]
+    },
+    {
+     "name": "SSL Connections Accepted",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.7564.20.2.2.0",
+       "op": "get",
+       "desc": "接受的SSL连接总数"
+      }
+     ]
+    },
+    {
+     "name": "SSL Connection Requests",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.7564.20.2.3.0",
+       "op": "get",
+       "desc": "请示的SSL连接总数"
+      }
+     ]
+    },
+    {
+     "name": "Bytes Received Per Second",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.7564.28.3.0",
+       "op": "get",
+       "desc": "每秒接收的字节数"
+      }
+     ]
+    },
+    {
+     "name": "Bytes Sent Per Second",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.7564.28.4.0",
+       "op": "get",
+       "desc": "每秒发送的字节数"
+      }
+     ]
+    },
+    {
+     "name": "Connections Per Second",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.7564.28.2.0",
+       "op": "get",
+       "desc": "每秒连接数"
+      }
+     ]
+    },
+    {
+     "name": "Connection Requests Per Second",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.7564.30.3.0",
+       "op": "get",
+       "desc": "每秒请求连接数"
+      }
+     ]
+    },
+    {
+     "name": "Current Connections",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.7564.20.1.0",
+       "op": "get",
+       "desc": "当前连接数"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 8072,
+   "name": "Net-SNMP Agent",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.11.11.0",
+       "op": "get",
+       "desc": "cpu利用率",
+       "expr": "100-A"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.4.5.0",
+       "op": "get",
+       "desc": "总内存节点A",
+       "expr": "(1-B/A)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2021.4.11.0",
+       "op": "get",
+       "desc": "空闲内存节点B",
+       "expr": "(1-B/A)*100"
+      }
+     ]
+    },
+    {
+     "name": "WAN Port Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.54.101.1",
+       "op": "walk",
+       "desc": "WAN口状态"
+      }
+     ]
+    },
+    {
+     "name": "WAN Port Speed",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.69.101.1",
+       "op": "walk",
+       "desc": "WAN口状态"
+      }
+     ]
+    },
+    {
+     "name": "WAN Port Duplex",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.69.101.1",
+       "op": "walk",
+       "desc": "WAN口双工状态"
+      }
+     ]
+    },
+    {
+     "name": "LAN Port Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.58.101.1",
+       "op": "walk",
+       "desc": "LAN口状态"
+      }
+     ]
+    },
+    {
+     "name": "LAN Port Speed",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.70.101.1",
+       "op": "walk",
+       "desc": "LAN口速率"
+      }
+     ]
+    },
+    {
+     "name": "LAN Port Duplex",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.60.101.1",
+       "op": "walk",
+       "desc": "LAN口双工状态"
+      }
+     ]
+    },
+    {
+     "name": "E1 Port Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.62.101.1",
+       "op": "walk",
+       "desc": "E1口状态"
+      }
+     ]
+    },
+    {
+     "name": "E1 Port Speed",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.71.101.1",
+       "op": "walk",
+       "desc": "E1口速率"
+      }
+     ]
+    },
+    {
+     "name": "E1 Port Duplex",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.64.101.1",
+       "op": "walk",
+       "desc": "E1口双工状态"
+      }
+     ]
+    },
+    {
+     "name": "E2 Port Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.66.101.1",
+       "op": "walk",
+       "desc": "E2口状态"
+      }
+     ]
+    },
+    {
+     "name": "E2 Port Speed",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.72.101.1",
+       "op": "walk",
+       "desc": "E2口状态"
+      }
+     ]
+    },
+    {
+     "name": "E2 Port Duplex",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.68.101.1",
+       "op": "walk",
+       "desc": "E2口双工状态"
+      }
+     ]
+    },
+    {
+     "name": "WAN Port Bandwidth",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.55.101.1",
+       "op": "walk",
+       "desc": "WAN口带宽"
+      }
+     ]
+    },
+    {
+     "name": "LAN Port Bandwidth",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.55.101.1",
+       "op": "walk",
+       "desc": "LAN口带宽"
+      }
+     ]
+    },
+    {
+     "name": "E1 Port Bandwidth",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.63.101.1",
+       "op": "walk",
+       "desc": "E1口带宽"
+      }
+     ]
+    },
+    {
+     "name": "E2 Port Bandwidth",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.67.101.1",
+       "op": "walk",
+       "desc": "E2口带宽"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 8212,
+   "name": "Enterprise 8212",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.8212.1.1.4.1.1.4",
+       "op": "walk",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.8212.1.1.4.1.1.7",
+       "op": "walk",
+       "desc": "总内存节点A",
+       "expr": "(A-B)/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.8212.1.1.4.1.1.8",
+       "op": "walk",
+       "desc": "空闲内存节点B",
+       "expr": "(A-B)/A*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 9833,
+   "name": "Enterprise 9833",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.9833.1.1.11.9.0",
+       "op": "get",
+       "expr": "A+B"
+      },
+      {
+       "oid": "1.3.6.1.4.1.9833.1.1.11.10.0",
+       "op": "get",
+       "expr": "A+B"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.4.5.0",
+       "op": "get",
+       "desc": "总内存节点A",
+       "expr": "(A-B)/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2021.4.6.0",
+       "op": "get",
+       "desc": "空闲内存节点B",
+       "expr": "(A-B)/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.9833.1.1.4.5.0",
+       "op": "get",
+       "desc": "总内存节点A",
+       "expr": "(A-B)/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.9833.1.1.4.6.0",
+       "op": "get",
+       "desc": "空闲内存节点B",
+       "expr": "(A-B)/A*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 12356,
+   "name": "Fortinet",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.12356.1.8.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.12356.1.9.0",
+       "op": "get",
+       "desc": "内存利用率"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 14331,
+   "name": "Enterprise 14331",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14331.5.5.1.4.5.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.14331.5.5.1.4.2.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.14331.2.2.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.9952.1.5.1.17.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14331.5.5.1.4.3.0",
+       "op": "get",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.14331.5.5.1.4.6.0",
+       "op": "get",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.14331.2.3.0",
+       "op": "get",
+       "desc": "内存利用率",
+       "expr": "(A-B)/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.14331.2.4.0",
+       "op": "get",
+       "desc": "内存利用率",
+       "expr": "(A-B)/A*100"
+      }
+     ]
+    },
+    {
+     "name": "Current Connections",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14331.2.5.0",
+       "op": "get",
+       "desc": "当前连接数"
+      },
+      {
+       "oid": "1.3.6.1.4.1.14331.5.5.1.4.6.0",
+       "op": "get",
+       "desc": "当前连接数"
+      },
+      {
+       "oid": "1.3.6.1.4.1.14331.5.5.1.4.5.0",
+       "op": "get",
+       "desc": "当前连接数"
+      },
+      {
+       "oid": "1.3.6.1.4.1.14331.5.5.1.4.9.0",
+       "op": "get",
+       "desc": "当前连接数"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 14854,
+   "name": "Enterprise 14854",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.21.101.1",
+       "op": "walk",
+       "desc": "cpu利用率",
+       "expr": "1-A"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.23.101.1",
+       "op": "walk",
+       "desc": "可用内存",
+       "expr": "(1-A/B)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.14854.22.101.1",
+       "op": "walk",
+       "desc": "内存总量",
+       "expr": "(1-A/B)*100"
+      }
+     ]
+    },
+    {
+     "name": "Eth0 Port Name",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.21.101.1",
+       "op": "walk",
+       "desc": "Eth0口名称"
+      }
+     ]
+    },
+    {
+     "name": "Eth0 Port Speed",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.2.0.101.1",
+       "op": "walk",
+       "desc": "Eth0口速度"
+      }
+     ]
+    },
+    {
+     "name": "Eth0 Port Duplex",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.3.0.101.1",
+       "op": "walk",
+       "desc": "Eth0口双工状态"
+      }
+     ]
+    },
+    {
+     "name": "Eth0 Port Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.4.0.101.1",
+       "op": "walk",
+       "desc": "Eth0口双工状态"
+      }
+     ]
+    },
+    {
+     "name": "Eth0 Port MTU",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.5.0.101.1",
+       "op": "walk",
+       "desc": "Eth0口MTU"
+      }
+     ]
+    },
+    {
+     "name": "Eth1 Port Name",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.1.1.101.1",
+       "op": "walk",
+       "desc": "Eth1口名称"
+      }
+     ]
+    },
+    {
+     "name": "Eth1 Port Speed",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.2.1.101.1",
+       "op": "walk",
+       "desc": "Eth1口速度"
+      }
+     ]
+    },
+    {
+     "name": "Eth1 Port Duplex",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.3.1.101.1",
+       "op": "walk",
+       "desc": "Eth1口双工状态"
+      }
+     ]
+    },
+    {
+     "name": "Eth1 Port Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.4.1.101.1",
+       "op": "walk",
+       "desc": "Eth1口状态"
+      }
+     ]
+    },
+    {
+     "name": "Eth1 Port MTU",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.5.1.101.1",
+       "op": "walk",
+       "desc": "Eth1口MTU"
+      }
+     ]
+    },
+    {
+     "name": "Eth2 Port Name",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.1.2.101.1",
+       "op": "walk",
+       "desc": "Eth2口名称"
+      }
+     ]
+    },
+    {
+     "name": "Eth2 Port Speed",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.2.2.101.1",
+       "op": "walk",
+       "desc": "Eth2口速度"
+      }
+     ]
+    },
+    {
+     "name": "Eth2 Port Duplex",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.3.2.101.1",
+       "op": "walk",
+       "desc": "Eth2口双工状态"
+      }
+     ]
+    },
+    {
+     "name": "Eth2 Port Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.4.2.101.1",
+       "op": "walk",
+       "desc": "Eth2口状态"
+      }
+     ]
+    },
+    {
+     "name": "Eth2 Port MTU",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.5.2.101.1",
+       "op": "walk",
+       "desc": "Eth2口MTU"
+      }
+     ]
+    },
+    {
+     "name": "Eth3 Port Name",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.1.3.101.1",
+       "op": "walk",
+       "desc": "Eth3口名称"
+      }
+     ]
+    },
+    {
+     "name": "Eth3 Port Speed",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.2.3.101.1",
+       "op": "walk",
+       "desc": "Eth3口速度"
+      }
+     ]
+    },
+    {
+     "name": "Eth3 Port Duplex",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.3.3.101.1",
+       "op": "walk",
+       "desc": "Eth3口双工状态"
+      }
+     ]
+    },
+    {
+     "name": "Eth3 Port Status",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.4.3.101.1",
+       "op": "walk",
+       "desc": "Eth3口状态"
+      }
+     ]
+    },
+    {
+     "name": "Eth3 Port MTU",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.5.3.101.1",
+       "op": "walk",
+       "desc": "Eth3口MTU"
+      }
+     ]
+    },
+    {
+     "name": "System Name",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.14854.20.101.1",
+       "op": "walk",
+       "desc": "系统名称"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 15922,
+   "name": "Enterprise 15922",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.15922.1.8.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.15922.1.9.0",
+       "op": "get",
+       "desc": "内存利用率"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 19849,
+   "name": "Enterprise 19849",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.19849.2.8.2.0",
+       "op": "get",
+       "desc": "CPU利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.19849.5.3.1.0",
+       "op": "get",
+       "desc": "CPU利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.19849.2.3.2.0",
+       "op": "get",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.19849.2.8.3.0",
+       "op": "get",
+       "desc": "内存利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.19849.5.3.2.0",
+       "op": "get",
+       "desc": "内存利用率"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 20858,
+   "name": "Enterprise 20858",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.20858.10.13.1.1.1.4.702",
+       "op": "walk",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.20858.10.13.1.1.1.3.101",
+       "op": "walk",
+       "desc": "内存使用大小（used）A",
+       "expr": "A/(A+B)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.20858.10.13.1.1.1.2.101",
+       "op": "walk",
+       "desc": "内存总量（free）B",
+       "expr": "A/(A+B)*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 25506,
+   "name": "H3C",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2011.2.2.4.12.0",
+       "op": "get",
+       "desc": "1分钟平均利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.23.1.18.1.3.0",
+       "op": "get",
+       "desc": "CPU利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.1.1.1.4",
+       "op": "walk",
+       "desc": "5分钟平均利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.3.4.1.2",
+       "op": "walk",
+       "desc": "最后1分钟内的利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.25506.8.35.18.1.3.0",
+       "op": "get",
+       "desc": "最后1分钟内的利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.25506.2.6.1.1.1.1.6.0",
+       "op": "get",
+       "desc": "最后1分钟内的利用率"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.6.18",
+       "op": "walk",
+       "desc": "CPU利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.6.13",
+       "op": "walk",
+       "desc": "CPU利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.25506.2.6.1.1.1.1.4",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.25506.2.6.1.1.1.1.6",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.5.25.31.1.1.1.1.3",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.4",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.6",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.1.1.1",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.1.1.4",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.10.1.1",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.10.1.4",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.25506.2.6.1.1.1.1.8.0",
+       "op": "get"
+      },
+      {
+       "oid": "1.3.6.1.4.1.25506.8.35.18.1.16.0",
+       "op": "get"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.4.1.8",
+       "op": "walk"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.8.18",
+       "op": "walk",
+       "desc": "CPU利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.8.13",
+       "op": "walk",
+       "desc": "CPU利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.25506.2.6.1.1.1.1.4",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.25506.2.6.1.1.1.1.8",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.5.25.31.1.1.1.1.3",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.4",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.10.2.6.1.1.1.1.8",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.1.1.1",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.1.1.5",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.10.1.1",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.17.1.2.3.10.1.5",
+       "op": "walk",
+       "desc": "利用率",
+       "paired": true
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.1.2.1.1.2",
+       "op": "walk",
+       "desc": "总内存节点A",
+       "expr": "(A-B)/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.1.2.1.1.3",
+       "op": "walk",
+       "desc": "空闲内存节点B",
+       "expr": "(A-B)/A*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.2.5.1",
+       "op": "walk",
+       "desc": "已使用内存列求和(used)A",
+       "expr": "A/(A+B)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.2.2.5.2",
+       "op": "walk",
+       "desc": "空闲内存值列求和(free)B",
+       "expr": "A/(A+B)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.3.5.1.1.3",
+       "op": "walk",
+       "desc": "已使用内存列求和(used)A",
+       "expr": "A/(A+B)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2011.6.3.5.1.1.2",
+       "op": "walk",
+       "desc": "空闲内存值列求和(free)B",
+       "expr": "A/(A+B)*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 27975,
+   "name": "Enterprise 27975",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.27975.1.2.2.11.0",
+       "op": "get",
+       "desc": "空闲CPU百分比A",
+       "expr": "1-A"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.27975.1.2.1.5.0",
+       "op": "get",
+       "desc": "总内存节点A",
+       "expr": "(1-B/A)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.27975.1.2.1.6.0",
+       "op": "get",
+       "desc": "空闲内存节点B",
+       "expr": "(1-B/A)*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 28557,
+   "name": "Hillstone",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.2.1.3.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.2.1.5.0",
+       "op": "get",
+       "desc": "内存使用大小（used）A",
+       "expr": "A/B*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.28557.2.2.1.4.0",
+       "op": "get",
+       "desc": "内存总量（total）B",
+       "expr": "A/B*100"
+      }
+     ]
+    },
+    {
+     "name": "Current Connections",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.1.1.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "HTTP Attack Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.3.1.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "FTP Attack Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.3.3.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "SMTP Attack Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.3.4.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "NETBIOS Attack Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.3.5.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "POP3 Attack Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.3.6.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "IMAP Attack Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.3.9.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "P2P Attack Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.3.10.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "HTTP Protocol Virus Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.7.1.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "FTP Protocol Virus Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.7.2.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "SMTP Protocol Virus Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.7.3.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "POP Protocol Virus Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.7.4.0",
+       "op": "get"
+      }
+     ]
+    },
+    {
+     "name": "IMAP Protocol Virus Count",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.28557.2.3.7.5.0",
+       "op": "get"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 32328,
+   "name": "Enterprise 32328",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.11.11.0",
+       "op": "get",
+       "desc": "cpu利用率",
+       "expr": "100-A"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.2021.4.5.0",
+       "op": "get",
+       "desc": "总内存节点A",
+       "expr": "(1-B/A)*100"
+      },
+      {
+       "oid": "1.3.6.1.4.1.2021.4.11.0",
+       "op": "get",
+       "desc": "空闲内存节点B",
+       "expr": "(1-B/A)*100"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "enterprise": 35047,
+   "name": "Sangfor",
+   "indicators": [
+    {
+     "name": "CPU Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.4.1.35047.1.3.0",
+       "op": "get",
+       "desc": "cpu利用率"
+      }
+     ]
+    },
+    {
+     "name": "Memory Usage",
+     "candidates": [
+      {
+       "oid": "1.3.6.1.2.1.1.2.0",
+       "op": "get",
+       "desc": "利用率",
+       "paired": true
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

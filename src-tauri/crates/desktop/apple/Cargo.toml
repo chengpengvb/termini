@@ -1,0 +1,10 @@
+[package]
+name = "desktop-apple"
+version = "0.1.0"
+edition = "2021"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+desktop-core = { path = "../core" }
+core-foundation = "0.10"
+core-graphics = "0.24"
+accessibility-sys = "0.1"

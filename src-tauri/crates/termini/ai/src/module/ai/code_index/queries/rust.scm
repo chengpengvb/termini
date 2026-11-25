@@ -1,0 +1,12 @@
+(function_item name: (identifier) @def.function)
+(struct_item name: (type_identifier) @def.struct)
+(enum_item name: (type_identifier) @def.enum)
+(trait_item name: (type_identifier) @def.trait)
+(mod_item name: (identifier) @def.module)
+(impl_item type: (type_identifier) @def.impl)
+(const_item name: (identifier) @def.const)
+(static_item name: (identifier) @def.static)
+(type_item name: (type_identifier) @def.type)
+(call_expression function: (identifier) @ref.call)
+(call_expression function: (field_expression field: (field_identifier) @ref.call))
+(type_identifier) @ref.type

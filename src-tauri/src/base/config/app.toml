@@ -1,0 +1,67 @@
+[system]
+data_dir = '${TERMINI_DATA_DIR}'
+
+[logger]
+override_filter = "info,rig_core=warn"
+
+# 发行版没有控制台, 日志按天落到数据目录; ${TERMINI_DATA_DIR} 由 lib.rs 在加载前替换
+[logger.file]
+enable = true
+dir = '${TERMINI_DATA_DIR}/logs'
+rotation = "daily"
+max_log_files = 7
+filename_prefix = "termini"
+filename_suffix = "log"
+
+[web]
+binding = "127.0.0.1"
+port = 18790
+graceful = false
+allow_origins = [
+    "http://localhost:15173",
+    "http://127.0.0.1:15173",
+    "http://localhost:9000",
+    "http://127.0.0.1:9000",
+    "https://terminiapp.com",
+    "http://tauri.localhost",
+    "https://tauri.localhost",
+    "tauri://localhost",
+    "https://asset.localhost",
+    "http://asset.localhost",
+]
+
+[frontend]
+# 必须落在 Windows TCP 动态端口范围（默认 1024-15000）之外，
+# 否则 Hyper-V/WSL 的 NAT 预留可能抢占该端口，导致 Vite 绑定失败 EACCES。
+dev_port = 15173
+
+[socket_io]
+default_namespace = "/"
+
+[auth]
+require_prefixes = [
+    "/cloud_sync",
+    "/store",
+    "/command_suggest",
+    "/ai_agent/generate_skill",
+    "/ai_agent/cancel_generate_skill",
+    "/ai_plan_task/run_now",
+]
+require_paths = [
+    "/account/profile",
+    "/account/logout",
+    "/account/delete_code",
+    "/account/delete_account",
+]
+warmup_allow_paths = [
+    "/account/report_error",
+    "/system/platform/info",
+    "/system/window/minimize",
+    "/system/window/toggle_maximize",
+    "/system/window/close",
+    "/system/window/start_dragging",
+    "/system/window/maximized",
+    "/system/window/fullscreen",
+]
+
+

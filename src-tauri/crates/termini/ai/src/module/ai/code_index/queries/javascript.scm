@@ -1,0 +1,7 @@
+(function_declaration name: (identifier) @def.function)
+(generator_function_declaration name: (identifier) @def.function)
+(method_definition name: (property_identifier) @def.method)
+(class_declaration name: (identifier) @def.class)
+(lexical_declaration (variable_declarator name: (identifier) @def.variable))
+(call_expression function: (identifier) @ref.call)
+(call_expression function: (member_expression property: (property_identifier) @ref.call))

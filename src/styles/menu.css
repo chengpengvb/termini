@@ -1,0 +1,199 @@
+.MuiPaper-root.tm-menu-paper,
+.MuiPaper-root.MuiMenu-paper,
+.MuiPaper-root.MuiPopover-paper {
+  background-image: none !important;
+  background: var(--tm-glass-dialog-bg) !important;
+  background-color: var(--tm-glass-dialog-bg) !important;
+  -webkit-backdrop-filter: var(--tm-glass-dialog-blur);
+  backdrop-filter: var(--tm-glass-dialog-blur);
+  border: 1px solid var(--tm-glass-dialog-border) !important;
+  border-radius: var(--tm-radius-control) !important;
+  box-shadow: var(--tm-glass-dialog-shadow) !important;
+}
+
+.MuiPaper-root.tm-menu-paper {
+  min-width: 220px !important;
+  padding: 0 !important;
+}
+
+.MuiList-root.tm-menu-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  padding: 6px !important;
+}
+
+.tm-menu-item-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 0;
+}
+
+.MuiMenuItem-root.tm-menu-item {
+  gap: 8px !important;
+  height: var(--tm-edit-field-min-height) !important;
+  min-height: var(--tm-edit-field-min-height) !important;
+  margin: 0 !important;
+  padding: 0 14px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--tm-letter-spacing-ui);
+  color: var(--tm-text-primary) !important;
+  box-sizing: border-box !important;
+  transition:
+    background-color var(--tm-duration-short) var(--tm-easing-standard),
+    color var(--tm-duration-short) var(--tm-easing-standard);
+}
+
+.MuiMenuItem-root.tm-menu-item .tm-menu-item-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tm-text-secondary);
+}
+
+.MuiMenuItem-root.tm-menu-item .tm-menu-item-icon .MuiSvgIcon-root {
+  font-size: 16px;
+}
+
+.MuiMenuItem-root.tm-menu-item .tm-menu-item-text {
+  flex: 1;
+  min-width: 0;
+  overflow: clip;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.MuiMenuItem-root.tm-menu-item.is-selected,
+.MuiMenuItem-root.tm-menu-item.Mui-selected {
+  background-color: color-mix(in srgb, var(--tm-text-primary) 12%, var(--tm-bg-elevated)) !important;
+}
+
+.MuiMenuItem-root.tm-menu-item:hover,
+.MuiMenuItem-root.tm-menu-item.Mui-focusVisible {
+  background-color: color-mix(in srgb, var(--tm-text-primary) 10%, var(--tm-bg-elevated)) !important;
+}
+
+.MuiMenuItem-root.tm-menu-item.Mui-selected:hover,
+.MuiMenuItem-root.tm-menu-item.is-selected:hover {
+  background-color: color-mix(in srgb, var(--tm-text-primary) 16%, var(--tm-bg-elevated)) !important;
+}
+
+.MuiMenuItem-root.tm-menu-item:hover .tm-menu-item-icon {
+  color: var(--tm-text-primary);
+}
+
+.MuiMenuItem-root.tm-menu-item:active {
+  background-color: color-mix(in srgb, var(--tm-text-primary) 18%, var(--tm-bg-elevated)) !important;
+}
+
+.MuiMenuItem-root.tm-menu-item.Mui-disabled {
+  opacity: 0.5;
+}
+
+.MuiList-root.tm-menu-list .tm-menu-divider {
+  height: 1px;
+  border: none;
+  margin: 5px 2px;
+  background-color: var(--tm-border-divider);
+}
+
+/* ── KeyPairFields menu item ─────────────────────────── */
+.MuiMenuItem-root.tm-menu-item.is-accent {
+  color: var(--tm-status-success) !important;
+}
+
+.MuiMenuItem-root.tm-menu-item.is-accent .tm-menu-item-text {
+  color: var(--tm-status-success);
+}
+
+.MuiMenuItem-root.tm-menu-item.tm-menu-item-danger {
+  color: var(--tm-status-danger) !important;
+}
+
+.MuiMenuItem-root.tm-menu-item.tm-menu-item-danger .tm-menu-item-text {
+  color: var(--tm-status-danger);
+}
+
+html.tm-platform-mobile {
+  .MuiPaper-root.MuiPopover-paper.tm-menu-paper,
+  .MuiPaper-root.MuiMenu-paper.tm-menu-paper {
+    min-width: 132px !important;
+    width: max-content !important;
+    padding: 6px 0 !important;
+    border-radius: 12px !important;
+    background: var(--tm-mobile-card-bg) !important;
+    background-color: var(--tm-mobile-card-bg) !important;
+    border: none !important;
+    box-shadow: var(--tm-shadow-lg) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .MuiList-root.tm-menu-list {
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
+  .MuiMenuItem-root.tm-menu-item {
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 18px !important;
+    border-radius: 0 !important;
+    font-size: 0.9375rem !important;
+    font-weight: 500 !important;
+    background: transparent !important;
+  }
+
+  .MuiMenuItem-root.tm-menu-item:hover,
+  .MuiMenuItem-root.tm-menu-item.Mui-focusVisible {
+    background: transparent !important;
+  }
+
+  .MuiMenuItem-root.tm-menu-item:active {
+    background: var(--tm-bg-hover) !important;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .MuiMenuItem-root.tm-menu-item:hover {
+      background: var(--tm-bg-hover) !important;
+    }
+  }
+
+  .MuiMenuItem-root.tm-menu-item .tm-menu-item-text {
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+
+  .MuiMenuItem-root.tm-menu-item.is-accent,
+  .MuiMenuItem-root.tm-menu-item.is-accent .tm-menu-item-text {
+    color: var(--tm-status-success) !important;
+  }
+
+  .MuiMenuItem-root.tm-menu-item.tm-menu-item-danger,
+  .MuiMenuItem-root.tm-menu-item.tm-menu-item-danger .tm-menu-item-text {
+    color: var(--tm-status-danger) !important;
+  }
+}
+
+.tm-keypair-name {
+  flex: 1;
+  min-width: 0;
+  overflow: clip;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  color: var(--tm-text-secondary);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}

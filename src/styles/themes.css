@@ -1,0 +1,166 @@
+:root,
+.tm-account-login:not(.is-boot) {
+  --tm-glass-bg: #212323;
+  --tm-glass-bg-hover: #212323;
+  --tm-glass-bg-active: #212323;
+  --tm-glass-bg-selected: #212323;
+  --tm-glass-border: rgba(255, 255, 255, 0.06);
+  --tm-glass-border-hover: rgba(255, 255, 255, 0.1);
+  --tm-glass-fg: rgba(212, 212, 212, 0.96);
+  --tm-glass-fg-strong: #d4d4d4;
+  --tm-glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --tm-glass-blur: blur(22px) saturate(1.15);
+  --tm-glass-ripple: rgba(64, 143, 216, 0.32);
+  --tm-glass-dialog-bg: rgba(24, 24, 24, 0.92);
+  --tm-glass-dialog-border: rgba(255, 255, 255, 0.08);
+  --tm-glass-dialog-blur: blur(32px) saturate(1.2);
+  --tm-glass-dialog-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 12px 32px rgba(0, 0, 0, 0.45);
+  --tm-glass-drawer-bg: rgba(24, 24, 24, 0.88);
+  --tm-modal-backdrop: rgba(0, 0, 0, 0.52);
+  --tm-action-btn-height: 34px;
+
+  --tm-bg-app: #181818;
+  --tm-bg-group: #181818;
+  --tm-bg-hover: var(--tm-glass-bg-hover);
+  --tm-bg-elevated: var(--tm-glass-bg);
+  --tm-bg-danger: #c6353d;
+  --tm-bg-active: var(--tm-glass-bg-active);
+  --tm-bg-selected: var(--tm-glass-bg-selected);
+  --tm-bg-button: var(--tm-glass-bg);
+  --tm-bg-contrast: #d4d4d4;
+  --tm-bg-accent: color-mix(in srgb, var(--tm-status-success) 18%, transparent);
+  --tm-bg-accent-strong: color-mix(in srgb, var(--tm-status-success) 26%, transparent);
+  --tm-bg-warning: rgba(212, 176, 80, 0.12);
+  --tm-bg-warning-strong: rgba(212, 176, 80, 0.2);
+  --tm-bg-danger-soft: rgba(236, 67, 67, 0.14);
+
+  --tm-btn-primary-bg: color-mix(in srgb, var(--tm-status-success) 18%, transparent);
+  --tm-btn-primary-bg-hover: color-mix(in srgb, var(--tm-status-success) 26%, transparent);
+  --tm-btn-primary-fg: var(--tm-status-success);
+  --tm-btn-primary-border: transparent;
+
+  --tm-text-inverse: #181818;
+  --tm-text-primary: #d4d4d4;
+  --tm-text-secondary: #a1a1a1;
+  --tm-text-tertiary: #999999;
+  --tm-text-warning: #c8b06a;
+  --tm-text-on-accent: #ffffff;
+  --tm-text-on-danger: #ffffff;
+
+  --tm-border-subtle: rgba(255, 255, 255, 0.08);
+  --tm-border-divider: rgba(255, 255, 255, 0.06);
+  --tm-border-accent: color-mix(in srgb, var(--tm-status-success) 42%, transparent);
+  --tm-tab-outline: #2b2b2b;
+
+  --tm-icon-accent: #69abe6;
+  --tm-icon-file: #d4d4d4;
+  --tm-icon-on-tile: #d4d4d4;
+  --tm-icon-on-brand: #d4d4d4;
+
+  --tm-proto-ink: #c8d0dc;
+  --tm-proto-ssh: var(--tm-proto-ink);
+  --tm-proto-telnet: var(--tm-proto-ink);
+  --tm-proto-sftp: var(--tm-proto-ink);
+  --tm-proto-rdp: var(--tm-proto-ink);
+  --tm-proto-ftp: var(--tm-proto-ink);
+  --tm-proto-badge-glass-bg: rgba(30, 30, 30, 0.92);
+  --tm-proto-badge-glass-edge: rgba(200, 208, 220, 0.4);
+  --tm-proto-badge-glass-shine: rgba(255, 255, 255, 0.1);
+  --tm-proto-badge-glass-ring: var(--tm-bg-app);
+  --tm-proto-badge-blur: none;
+
+  --tm-chip-ref-bg: #2b2b2b;
+  --tm-chip-ref-fg: var(--tm-text-secondary);
+  --tm-chip-ref-fg-muted: var(--tm-text-tertiary);
+  --tm-chip-ref-close-hover-bg: var(--tm-bg-active);
+
+  --tm-badge-ring-bg: #ebebf0;
+  --tm-badge-ring-shadow: rgba(0, 0, 0, 0.28);
+  --tm-backdrop: rgba(0, 0, 0, 0.48);
+  --tm-shadow-elevated: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --tm-shadow-float: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --tm-inset-highlight: rgba(255, 255, 255, 0.04);
+  --tm-scrollbar-thumb: rgba(255, 255, 255, 0.14);
+
+  --tm-terminal-search-active-bg: #5e5635;
+  --tm-terminal-search-active-border: #5e5635;
+  --tm-terminal-search-match-bg: #3a3a3c;
+  --tm-terminal-search-match-border: #3a3a3c;
+
+  --tm-status-success: #30d158;
+  --tm-status-danger: #f67a7a;
+  --tm-status-danger-soft-bg: rgba(236, 67, 67, 0.28);
+  --tm-job-metric-name-fg: var(--tm-text-primary);
+  --tm-job-metric-label-fg: var(--tm-text-secondary);
+  --tm-job-metric-value-fg: var(--tm-text-secondary);
+
+  --tm-sftp-entry-selected-bg: #3a3a3c;
+  --tm-sftp-drag-cover-bg: rgba(0, 0, 0, 0.55);
+  --tm-sftp-search-bar-bg: #1e1e1e;
+  --tm-sftp-search-icon-fg: var(--tm-text-secondary);
+  --tm-sftp-search-input-fg: var(--tm-text-primary);
+  --tm-sftp-search-placeholder-fg: var(--tm-text-tertiary);
+  --tm-sftp-match-highlight-bg: #8e6a1a;
+  --tm-sftp-icon-folder: #408fd8;
+  --tm-sftp-icon-file: #d4d4d4;
+  --tm-sftp-entry-name-fg: rgba(212, 212, 212, 0.78);
+  --tm-device-item-name-fg: #fff;
+  --tm-device-item-protocols-fg: #96b09e;
+  --tm-overlay-ink: #ffffff;
+  --tm-label-ink: #ebebf5;
+  --tm-agent-message-fg: #cccccc;
+  --tm-agent-revert-bg: #2b2d31;
+  --tm-agent-confirm-danger-fg: #e2c08d;
+  --tm-terminal-fg: #ffffff;
+  --tm-code-chalky: #e5c07b;
+  --tm-code-coral: #e06c75;
+  --tm-code-cyan: #56b6c2;
+  --tm-code-ivory: #abb2bf;
+  --tm-code-stone: #7d8799;
+  --tm-code-malibu: #61afef;
+  --tm-code-sage: #98c379;
+  --tm-code-whiskey: #d19a66;
+  --tm-code-violet: #c678dd;
+  --tm-sftp-entry-perms-fg: var(--tm-text-tertiary);
+
+  --tm-protocol-log-accent-fg: #408fd8;
+  --tm-protocol-log-danger-bg: rgba(236, 67, 67, 0.18);
+
+  --tm-agent-tool-accent-fg: #408fd8;
+  --tm-agent-tool-accent-bg: rgba(64, 143, 216, 0.12);
+
+  --tm-radius-control: 10px;
+  --tm-radius-row: 14px;
+  --tm-page-width: 760px;
+  --tm-agent-input-width: 816px;
+  --tm-z-overlay: 1800;
+  --tm-z-sheet: var(--tm-z-overlay);
+  --tm-z-dialog: var(--tm-z-overlay);
+  --tm-z-popover: var(--tm-z-overlay);
+  --tm-z-toast: calc(var(--tm-z-overlay) + 200);
+  --tm-dialog-width: min(640px, 92vw);
+  --tm-dialog-ratio: 4 / 3;
+  --tm-dialog-radius: 16px;
+  --tm-edit-field-min-height: 38px;
+  --tm-duration-short: 150ms;
+  --tm-duration-medium: 200ms;
+  --tm-duration-page: 320ms;
+  --tm-duration-sheet: 360ms;
+  --tm-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --tm-easing-decelerate: cubic-bezier(0, 0, 0, 1);
+  --tm-easing-ios: cubic-bezier(0.32, 0.72, 0, 1);
+  --tm-easing-ios-exit: cubic-bezier(0.4, 0, 0.2, 1);
+  --tm-shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --tm-shadow-focus-ring: 0 0 0 2px rgba(100, 100, 255, 0.3);
+  --tm-font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --tm-font-serif: Georgia, 'Times New Roman', 'Songti SC', 'Noto Serif SC', 'STSong', serif;
+  --tm-font-md: var(--tm-font-ui);
+  --tm-font-mono: Menlo, Consolas, 'Cascadia Mono', 'Liberation Mono', 'Courier New', monospace;
+  --tm-letter-spacing-ui: normal;
+  --tm-agent-md-fg: var(--tm-text-primary);
+
+  --tm-diff-add-fg: #6aab73;
+  --tm-diff-add-bg: rgba(106, 171, 115, 0.12);
+  --tm-diff-del-fg: var(--tm-status-danger);
+  --tm-diff-del-bg: rgba(236, 67, 67, 0.12);
+}

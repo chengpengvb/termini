@@ -1,0 +1,12 @@
+{
+  "version": "0.1.21",
+  "bundle": {
+    "targets": ["app"],
+    "macOS": {
+      "entitlements": "entitlements/macos-app-store.plist",
+      "minimumSystemVersion": "12.0",
+      "infoPlist": "plist/Info.macos.plist",
+      "signingIdentity": "3rd Party Mac Developer Application: peng cheng (P6F3GRB9QG)"
+    }
+  }
+}

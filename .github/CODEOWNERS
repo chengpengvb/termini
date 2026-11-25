@@ -1,0 +1,5 @@
+/.gitignore @chengpengvb
+/.github/ @chengpengvb
+/LICENSE @chengpengvb
+/src-tauri/Cargo.toml @chengpengvb
+/package.json @chengpengvb

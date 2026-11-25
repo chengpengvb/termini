@@ -1,0 +1,37 @@
+[Desktop Entry]
+Categories={{{categories}}}
+Comment={{{comment}}}
+Exec={{{exec}}} %U
+StartupWMClass={{{exec}}}
+Icon={{{icon}}}
+Name={{{name}}}
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/termini;inode/directory;
+Actions=open-here;
+
+[Desktop Action open-here]
+Name=Open in Termini
+Name[en]=Open in Termini
+Name[en_US]=Open in Termini
+Name[zh_CN]=在 Termini 中打开
+Name[zh_TW]=在 Termini 中開啟
+Name[ja]=Termini で開く
+Name[ja_JP]=Termini で開く
+Name[ko]=Termini에서 열기
+Name[ko_KR]=Termini에서 열기
+Name[de]=In Termini öffnen
+Name[de_DE]=In Termini öffnen
+Name[fr]=Ouvrir dans Termini
+Name[fr_FR]=Ouvrir dans Termini
+Name[es]=Abrir en Termini
+Name[es_ES]=Abrir en Termini
+Name[it]=Apri in Termini
+Name[it_IT]=Apri in Termini
+Name[pt]=Abrir no Termini
+Name[pt_PT]=Abrir no Termini
+Name[nl]=Openen in Termini
+Name[nl_NL]=Openen in Termini
+Name[hi]=Termini में खोलें
+Name[hi_IN]=Termini में खोलें
+Exec={{{exec}}} --open-here %f

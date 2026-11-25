@@ -1,0 +1,5 @@
+(function_definition (name) @def.function)
+(method_declaration (name) @def.method)
+(class_declaration (name) @def.class)
+(interface_declaration (name) @def.interface)
+(function_call_expression (name) @ref.call)

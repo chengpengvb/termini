@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability / 安全漏洞
+    url: https://github.com/chengpengvb/termini/security/advisories/new
+    about: Report privately, not as a public issue / 私密上报，不要公开提交
+  - name: Download / 下载
+    url: https://terminiapp.com/en/download
+    about: Store and installer links / 商店与安装包

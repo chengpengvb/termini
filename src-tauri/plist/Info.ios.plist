@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Termini needs local network access to connect to SSH servers and other devices on your network.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Termini needs camera access to take photos you attach in Deck.</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.termini.www</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>termini</string>
+			</array>
+		</dict>
+	</array>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_http._tcp</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>zh-Hans</string>
+		<string>zh-Hant</string>
+		<string>ja</string>
+		<string>ko</string>
+		<string>de</string>
+		<string>fr</string>
+		<string>es</string>
+		<string>it</string>
+		<string>pt</string>
+		<string>nl</string>
+		<string>hi</string>
+	</array>
+</dict>
+</plist>

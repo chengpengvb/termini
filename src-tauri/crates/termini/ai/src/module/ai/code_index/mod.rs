@@ -1,0 +1,14 @@
+mod store;
+mod render;
+pub mod walker;
+pub mod extract;
+pub mod semantic;
+pub mod index_guard;
+pub mod index_scope;
+pub mod embed_client;
+pub mod index_builder;
+pub use store::CodeIndex;
+pub use index_builder::{CodeIndexBuilder, IndexStage};
+pub use render::{render_group, render_map, render_search, render_search_grouped, render_symbol};
+pub use walker::{resolve_root, resolve_search_root, search_files, search_files_multi, walk_index_files};
+pub use index_scope::{path_in_prefix, resolve_index_scope, scan_bases, scope_from_dirs, IndexScope, ScopeHit};

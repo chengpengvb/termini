@@ -1,0 +1,5 @@
+(method (identifier) @def.method)
+(singleton_method (identifier) @def.method)
+(class (constant) @def.class)
+(module (constant) @def.module)
+(call (identifier) @ref.call)

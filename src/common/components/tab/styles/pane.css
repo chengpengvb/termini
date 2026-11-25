@@ -1,0 +1,311 @@
+.tm-pane-active-layout {
+  animation: tm-pane-tab-in var(--tm-duration-page) var(--tm-easing-ios) both;
+  will-change: opacity, transform;
+}
+
+@keyframes tm-pane-tab-in {
+  from {
+    opacity: 0;
+    transform: translate3d(6%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tm-pane-active-layout {
+    animation: none;
+  }
+}
+
+/* ── Pane bar (PaneBar.tsx) ───────────────────────────── */
+.tm-pane-cell--multi {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tm-pane-root--multi {
+  padding: 7px;
+  box-sizing: border-box;
+}
+
+.tm-pane-split--multi {
+  gap: 0;
+  row-gap: 0;
+  column-gap: 0;
+}
+
+.tm-pane-leaf--multi {
+  overflow: hidden;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--tm-border-divider);
+  background-color: var(--tm-terminal-bg);
+  transition: border-color var(--tm-duration-short) var(--tm-easing-standard);
+}
+
+.tm-pane-root--multi .tm-pane-leaf--multi:not(.is-focused) {
+  border-color: color-mix(in srgb, var(--tm-icon-accent) 58%, var(--tm-bg-app));
+}
+
+.tm-pane-root--multi .tm-pane-leaf--multi.is-focused {
+  border-color: color-mix(in srgb, var(--tm-icon-accent) 82%, var(--tm-bg-app));
+}
+
+.tm-pane-bar {
+  gap: 4px;
+  height: 28px;
+  display: flex;
+  padding: 0 8px;
+  flex-shrink: 0;
+  cursor: default;
+  font-size: 12px;
+  user-select: none;
+  align-items: center;
+  color: var(--tm-text-icon);
+  background-color: var(--tm-bg-app);
+  border-bottom: 1px solid color-mix(in srgb, var(--tm-border-subtle) 55%, transparent);
+  transition: background-color var(--tm-duration-short) var(--tm-easing-standard);
+}
+
+.tm-pane-bar:hover {
+  background-color: var(--tm-bg-tab-hover);
+}
+
+.tm-pane-root--multi .tm-pane-leaf--multi:not(.is-focused) .tm-pane-bar,
+.tm-pane-root--multi .tm-pane-leaf--multi:not(.is-focused) .tm-pane-bar:hover {
+  color: var(--tm-text-secondary);
+  background-color: var(--tm-bg-hover);
+  border-bottom-color: color-mix(in srgb, var(--tm-icon-accent) 50%, var(--tm-bg-app));
+  box-shadow: none;
+}
+
+.tm-pane-root--multi .tm-pane-leaf--multi:not(.is-focused) .tm-pane-bar-title,
+.tm-pane-root--multi .tm-pane-leaf--multi:not(.is-focused) .tm-pane-bar-icon {
+  color: var(--tm-text-secondary);
+  opacity: 1;
+}
+
+.tm-pane-root--multi .tm-pane-leaf--multi.is-focused .tm-pane-bar,
+.tm-pane-root--multi .tm-pane-leaf--multi.is-focused .tm-pane-bar:hover {
+  color: var(--tm-text-primary);
+  background-color: var(--tm-bg-active);
+  border-bottom-color: color-mix(in srgb, var(--tm-icon-accent) 58%, var(--tm-bg-app));
+  box-shadow: inset 3px 0 0 var(--tm-icon-accent);
+}
+
+.tm-pane-root--multi .tm-pane-leaf--multi.is-focused .tm-pane-bar-title,
+.tm-pane-root--multi .tm-pane-leaf--multi.is-focused .tm-pane-bar-icon {
+  color: var(--tm-text-primary);
+  opacity: 1;
+}
+
+.tm-pane-bar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.tm-pane-bar-icon svg,
+.tm-pane-bar-icon .iconify {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.tm-pane-bar-title {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ── Pane tools (PaneTools.tsx) ───────────────────────── */
+.tm-pane-tools {
+  gap: 3px;
+  display: flex;
+  flex-shrink: 0;
+  margin-right: 2px;
+  align-items: center;
+}
+
+.MuiButtonBase-root.tm-pane-tool {
+  width: 18px;
+  height: 18px;
+  opacity: 0;
+  flex-shrink: 0;
+  box-shadow: none;
+  cursor: default;
+  font-size: 14px;
+  border-radius: 4px;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tm-text-secondary);
+  background-color: transparent;
+  transition:
+    opacity var(--tm-duration-short) var(--tm-easing-decelerate),
+    color var(--tm-duration-short) var(--tm-easing-standard),
+    background-color var(--tm-duration-short) var(--tm-easing-standard);
+}
+
+.MuiButtonBase-root.tm-pane-tool svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.tm-pane-bar:hover .MuiButtonBase-root.tm-pane-tool {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tm-pane-bar:hover .MuiButtonBase-root.tm-pane-tool:hover {
+  color: var(--tm-text-primary);
+  background-color: var(--tm-bg-hover);
+}
+
+.MuiButtonBase-root.tm-pane-tool.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  color: var(--tm-icon-accent);
+  background-color: color-mix(in srgb, var(--tm-icon-accent) 16%, transparent);
+}
+
+.tm-pane-bar:hover .MuiButtonBase-root.tm-pane-tool.is-active:hover {
+  color: var(--tm-icon-accent);
+  background-color: color-mix(in srgb, var(--tm-icon-accent) 24%, transparent);
+}
+
+.MuiTooltip-tooltip.tm-pane-tool-pop {
+  border-radius: 10px;
+  padding: 6px 7px 6px 12px;
+  color: var(--tm-text-primary);
+  box-shadow: var(--tm-shadow-float);
+  border: 1px solid var(--tm-glass-dialog-border);
+  background-color: var(--tm-proto-badge-glass-bg);
+}
+
+.MuiTooltip-tooltip.tm-pane-tool-pop.MuiTooltip-tooltipPlacementLeft {
+  margin-right: 8px;
+}
+
+.tm-pane-tool-tip {
+  gap: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.tm-pane-tool-tip-label {
+  line-height: 1.4;
+  margin-right: 2px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  color: var(--tm-text-primary);
+}
+
+.tm-pane-tool-tip-key {
+  line-height: 1;
+  min-width: 9px;
+  padding: 4px 5px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 0.6875rem;
+  color: var(--tm-text-primary);
+  background-color: var(--tm-chip-ref-bg);
+}
+
+.MuiButtonBase-root.tm-pane-close {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  flex-shrink: 0;
+  opacity: 0;
+  box-shadow: none;
+  cursor: default;
+  font-size: 14px;
+  pointer-events: none;
+  border-radius: 4px;
+  transition:
+    opacity var(--tm-duration-short) var(--tm-easing-decelerate),
+    background-color var(--tm-duration-short) var(--tm-easing-decelerate);
+}
+
+.tm-pane-bar:hover .MuiButtonBase-root.tm-pane-close {
+  opacity: 1;
+  border: none;
+  box-shadow: none;
+  pointer-events: auto;
+  color: var(--tm-fg-warning);
+  background-color: var(--tm-bg-warning-hover);
+}
+
+.tm-pane-bar:hover .MuiButtonBase-root.tm-pane-close:hover {
+  background-color: var(--tm-bg-warning-active);
+}
+
+.tm-pane-bar:hover .MuiButtonBase-root.tm-pane-close:active {
+  background-color: var(--tm-bg-warning-active);
+}
+
+/* ── Split divider (PaneSplitDivider.tsx) ─────────────── */
+.tm-split-divider {
+  position: relative;
+  flex-shrink: 0;
+  transition: background-color var(--tm-duration-medium) var(--tm-easing-standard) 180ms;
+}
+
+.tm-split-divider.tm-split-divider-active {
+  background-color: color-mix(in srgb, var(--tm-text-primary) 10%, transparent);
+  transition: background-color var(--tm-duration-short) var(--tm-easing-decelerate) 0ms;
+}
+
+.tm-split-handle {
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  border-radius: 4px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background-color: var(--tm-text-icon);
+  transition: opacity var(--tm-duration-medium) var(--tm-easing-standard) 180ms;
+}
+
+.tm-split-handle-active {
+  opacity: 0.85;
+  background-color: var(--tm-text-primary);
+  transition: opacity var(--tm-duration-short) var(--tm-easing-decelerate) 0ms;
+}
+
+body.tm-split-resize-col,
+body.tm-split-resize-col * {
+  cursor: col-resize !important;
+}
+
+body.tm-split-resize-row,
+body.tm-split-resize-row * {
+  cursor: row-resize !important;
+}
+
+html.tm-platform-mobile {
+  .tm-pane-bar {
+    height: 48px;
+  }
+
+  .MuiButtonBase-root.tm-pane-tool,
+  .MuiButtonBase-root.tm-pane-close {
+    width: 44px;
+    height: 44px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

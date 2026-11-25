@@ -1,0 +1,66 @@
+@import "@fontsource-variable/geist";
+@import "./styles/themes.css";
+@import "./styles/safe-area.css";
+@import "./styles/common.css";
+@import "./styles/home.css";
+@import "./styles/job.css";
+@import "./styles/protocol.css";
+@import "./styles/terminal/themes.css";
+@import "./styles/theme-variants.css";
+@import "./styles/terminal/chrome.css";
+@import "./styles/menu.css";
+@import "./styles/ssh-auth.css";
+@import "./styles/sftp.css";
+@import "./styles/rdp.css";
+@import "./styles/agent.css";
+@import "./styles/code.css";
+@import "./styles/set.css";
+@import "./styles/suggest.css";
+@import "./styles/account.css";
+@import "./styles/guidance.css";
+
+:root {
+  --tm-vv-height: 100%;
+  --tm-vv-offset-top: 0px;
+  --tm-keyboard-inset: 0px;
+  --tm-app-height: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: var(--tm-app-height);
+  max-height: var(--tm-app-height);
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  color: var(--tm-text-primary);
+  background: var(--tm-bg-app);
+  font-family: var(--tm-font-ui), serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.MuiButtonBase-root,
+.MuiButton-root,
+.MuiIconButton-root,
+.MuiMenuItem-root {
+  cursor: default !important;
+}
+
+#root {
+  height: var(--tm-app-height);
+  max-height: var(--tm-app-height);
+  display: flex;
+  cursor: default;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--tm-bg-app);
+  color: var(--tm-text-primary);
+}
+
+html.tm-platform-mobile .tm-app-root {
+  height: var(--tm-app-height);
+  max-height: var(--tm-app-height);
+}
+

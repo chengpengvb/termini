@@ -1,0 +1,12 @@
+#[path = "../../../../../termini/ai/src/module/ai/code_index/render.rs"]
+pub mod render;
+#[path = "../../../../../termini/ai/src/module/ai/code_index/walker.rs"]
+pub mod walker;
+#[path = "../../../../../termini/ai/src/module/ai/code_index/extract.rs"]
+pub mod extract;
+#[path = "../../../../../termini/ai/src/module/ai/code_index/semantic.rs"]
+pub mod semantic;
+#[path = "../../../../../termini/ai/src/module/ai/code_index/index_guard.rs"]
+pub mod index_guard;
+#[path = "../../../../../termini/ai/src/module/ai/code_index/index_scope.rs"]
+pub mod index_scope;

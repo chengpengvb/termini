@@ -1,0 +1,42 @@
+[package]
+name = "protocol-rdp"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bytes = "1.12.1"
+chrono = "0.4.45"
+hmac = "0.12.1"
+md-5 = "0.10.6"
+num-bigint = "0.4.8"
+parking_lot = "0.12.5"
+rand = "0.8.5"
+rc4 = "0.1.0"
+openssl = { version = "0.10", features = ["vendored"] }
+tokio-openssl = "0.6"
+sha1 = "0.10.6"
+sha2 = "0.10.9"
+thiserror = "2.0.18"
+socket2 = { version = "0.6.4", features = ["all"] }
+tokio = { version = "1.52.2", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+iana-time-zone = "0.1.65"
+jpeg-decoder = { version = "0.3.2", default-features = false }
+jpeg-encoder = "0.6"
+openh264 = "0.9.8"
+openh264-sys2 = "0.9.8"
+png = "0.17"
+rayon = "1.10"
+libwebp-sys = { version = "0.14", features = ["sse41", "avx2", "neon"] }
+rodio = { version = "0.20", default-features = false }
+sspi = { git = "https://github.com/chengpengvb/sspi-rs.git", default-features = false, features = ["network_client", "dns_resolver", "ring"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+encode-windows = { path = "encode-windows" }
+
+[target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]
+encode-apple = { path = "encode-apple" }
+
+[target.'cfg(target_os = "android")'.dependencies]
+encode-android = { path = "encode-android" }

@@ -1,0 +1,81 @@
+name: Bug report / 问题反馈
+description: Something doesn't work as expected / 功能异常
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please don't paste passwords, private keys or real server addresses. Security issues go to the Security tab, not here.
+        请勿粘贴密码、私钥或真实服务器地址。安全漏洞请走 Security 标签页私密上报。
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform / 平台
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - iOS / iPadOS
+        - Android
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: Installed from / 安装来源
+      options:
+        - Microsoft Store
+        - Mac App Store
+        - Website installer / 官网安装包
+        - App Store (iOS)
+        - Google Play
+        - GitHub Releases
+        - Built from source / 源码编译
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / 版本
+      placeholder: "0.1.23"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area / 模块
+      multiple: true
+      options:
+        - SSH
+        - Telnet
+        - SFTP / FTP
+        - RDP
+        - Serial / 串口
+        - Local shell / 本机终端
+        - AI agent (Deck) / AI 智能体
+        - Command suggestions / 命令提示
+        - Monitoring / 监控
+        - Scheduled tasks / 计划任务
+        - Cloud sync / 云同步
+        - Other / 其他
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual / 预期与实际
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots / 日志或截图
+      description: Logs are in the data directory under `logs/`. Remove anything sensitive. / 日志在数据目录的 `logs/` 下，请先去除敏感信息。

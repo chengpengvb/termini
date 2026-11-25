@@ -1,0 +1,307 @@
+// Termini PDF 模板: 基于 pandoc 3.11 默认 typst 模板改写, conf 内联在此以便控制版式.
+// 变量约定: mainfont / codefont 都是按本机可用字体过滤后的回退链(多值), 由 pandoc.rs 传入.
+#set terms(hanging-indent: 1.5em)
+
+#let horizontalRule = line(start: (25%,0%), end: (75%,0%))
+#let divider = if "divider" in std { divider } else { horizontalRule }
+
+#show figure.where(
+  kind: table
+): set figure.caption(position: $if(table-caption-position)$$table-caption-position$$else$top$endif$)
+
+#show figure.where(
+  kind: image
+): set figure.caption(position: $if(figure-caption-position)$$figure-caption-position$$else$bottom$endif$)
+
+$if(highlighting-definitions)$
+$highlighting-definitions$
+
+$endif$
+#let content-to-string(content) = {
+  if content.has("text") {
+    content.text
+  } else if content.has("children") {
+    content.children.map(content-to-string).join("")
+  } else if content.has("body") {
+    content-to-string(content.body)
+  } else if content == [ ] {
+    " "
+  }
+}
+
+#let ink = rgb("#1F1F1F")
+#let muted = rgb("#595959")
+#let hairline = rgb("#BFBFBF")
+#let panel = rgb("#F5F5F5")
+#let panel-line = rgb("#D9D9D9")
+#let head-fill = rgb("#F2F2F2")
+#let zebra = rgb("#FAFAFA")
+#let link-blue = rgb("#0B57D0")
+
+#let conf(
+  title: none,
+  subtitle: none,
+  authors: (),
+  keywords: (),
+  date: none,
+  abstract-title: none,
+  abstract: none,
+  thanks: none,
+  cols: 1,
+  margin: (x: 2cm, y: 2cm),
+  paper: "a4",
+  lang: "zh",
+  region: "CN",
+  font: (),
+  fontsize: 11pt,
+  mathfont: none,
+  codefont: (),
+  linestretch: 1,
+  sectionnumbering: none,
+  linkcolor: none,
+  citecolor: none,
+  filecolor: none,
+  pagenumbering: "1 / 1",
+  doc,
+) = {
+  set document(
+    title: title,
+    keywords: keywords,
+  )
+  set document(
+      author: authors.map(author => content-to-string(author.name)).join(", ", last: " & "),
+  ) if authors != none and authors != ()
+  set page(
+    paper: paper,
+    margin: margin,
+    numbering: pagenumbering,
+    number-align: center,
+    columns: cols,
+  )
+
+  set par(
+    justify: true,
+    leading: linestretch * 0.75em,
+    spacing: linestretch * 1.1em,
+  )
+  set text(lang: lang, region: region, size: fontsize, fill: ink)
+  set text(font: font) if font != ()
+  show math.equation: set text(font: mathfont) if mathfont != none
+  show raw: set text(font: codefont, size: 0.86em) if codefont != ()
+
+  set heading(numbering: sectionnumbering)
+  show heading: set text(fill: ink, weight: "bold", hyphenate: false)
+  show heading.where(level: 1): it => block(above: 1.6em, below: 0.8em, text(size: 18pt, it))
+  show heading.where(level: 2): it => block(above: 1.4em, below: 0.6em, text(size: 15pt, it))
+  show heading.where(level: 3): it => block(above: 1.2em, below: 0.5em, text(size: 13pt, it))
+  show heading.where(level: 4): it => block(above: 1em, below: 0.4em, text(size: 11.5pt, it))
+
+  set table(
+    inset: 6pt,
+    stroke: 0.5pt + hairline,
+    fill: (_, y) => if y == 0 { head-fill } else if calc.odd(y) { zebra } else { none },
+  )
+  show table.cell.where(y: 0): strong
+  show figure.where(kind: table): set block(width: 100%)
+  show figure.caption: set text(size: 9pt, fill: muted)
+
+  show raw.where(block: true): it => block(
+    width: 100%,
+    fill: panel,
+    stroke: 0.5pt + panel-line,
+    inset: 8pt,
+    radius: 3pt,
+    it,
+  )
+  show raw.where(block: false): it => box(fill: head-fill, inset: (x: 3pt, y: 0pt), outset: (y: 3pt), radius: 2pt, it)
+
+  show quote.where(block: true): it => block(
+    width: 100%,
+    stroke: (left: 2pt + hairline),
+    inset: (left: 1em, y: 0.4em),
+    text(fill: muted, it.body),
+  )
+
+  show image: it => align(center, it)
+
+  show link: set text(fill: if linkcolor != none { rgb(content-to-string(linkcolor)) } else { link-blue })
+  show ref: set text(fill: rgb(content-to-string(citecolor))) if citecolor != none
+  show link: this => {
+    if filecolor != none and type(this.dest) == label {
+      text(this, fill: rgb(content-to-string(filecolor)))
+    } else {
+      text(this)
+    }
+  }
+
+  if title != none {
+    place(top, float: true, scope: "parent", clearance: 4mm, block(below: 1em, width: 100%)[
+      #if title != none {
+        align(center, block[
+            #text(weight: "bold", size: 1.7em, hyphenate: false)[#title #if thanks != none {
+                footnote(thanks, numbering: "*")
+                counter(footnote).update(n => n - 1)
+              }]
+            #(
+              if subtitle != none {
+                parbreak()
+                text(weight: "regular", size: 1.15em, fill: muted, hyphenate: false)[#subtitle]
+              }
+             )])
+      }
+
+      #if authors != none and authors != [] {
+        let count = authors.len()
+        let ncols = calc.min(count, 3)
+        grid(
+          columns: (1fr,) * ncols,
+          row-gutter: 1.5em,
+          ..authors.map(author => align(center)[
+            #author.name \
+            #author.affiliation \
+            #author.email
+          ])
+        )
+      }
+
+      #if date != none {
+        align(center)[#block(inset: 1em)[
+            #text(fill: muted)[#date]
+          ]]
+      }
+
+      #if abstract != none {
+        block(inset: 2em)[
+          #text(weight: "semibold")[#abstract-title] #h(1em) #abstract
+        ]
+      }
+    ])
+  }
+  doc
+}
+
+$if(smart)$
+$else$
+#set smartquote(enabled: false)
+
+$endif$
+$for(header-includes)$
+$header-includes$
+
+$endfor$
+#show: doc => conf(
+$if(title)$
+  title: [$title$],
+$endif$
+$if(subtitle)$
+  subtitle: [$subtitle$],
+$endif$
+$if(author)$
+  authors: (
+$for(author)$
+$if(author.name)$
+    ( name: [$author.name$],
+      affiliation: [$author.affiliation$],
+      email: [$author.email$] ),
+$else$
+    ( name: [$author$],
+      affiliation: "",
+      email: "" ),
+$endif$
+$endfor$
+    ),
+$endif$
+$if(keywords)$
+  keywords: ($for(keywords)$"$keywords/nowrap$"$sep$,$endfor$),
+$endif$
+$if(date)$
+  date: [$date$],
+$endif$
+$if(lang)$
+  lang: "$lang$",
+$endif$
+$if(region)$
+  region: "$region$",
+$endif$
+$if(abstract-title)$
+  abstract-title: [$abstract-title$],
+$endif$
+$if(abstract)$
+  abstract: [$abstract$],
+$endif$
+$if(thanks)$
+  thanks: [$thanks$],
+$endif$
+$if(margin)$
+  margin: ($for(margin/pairs)$$margin.key$: $margin.value$,$endfor$),
+$endif$
+$if(papersize)$
+  paper: "$papersize$",
+$endif$
+$if(mainfont)$
+  font: ($for(mainfont)$"$mainfont$",$endfor$),
+$endif$
+$if(fontsize)$
+  fontsize: $fontsize$,
+$endif$
+$if(mathfont)$
+  mathfont: ($for(mathfont)$"$mathfont$",$endfor$),
+$endif$
+$if(codefont)$
+  codefont: ($for(codefont)$"$codefont$",$endfor$),
+$endif$
+$if(linestretch)$
+  linestretch: $linestretch$,
+$endif$
+$if(section-numbering)$
+  sectionnumbering: "$section-numbering$",
+$endif$
+$if(page-numbering)$
+  pagenumbering: "$page-numbering$",
+$endif$
+$if(linkcolor)$
+  linkcolor: [$linkcolor$],
+$endif$
+$if(citecolor)$
+  citecolor: [$citecolor$],
+$endif$
+$if(filecolor)$
+  filecolor: [$filecolor$],
+$endif$
+  cols: $if(columns)$$columns$$else$1$endif$,
+  doc,
+)
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+#outline(
+  title: auto,
+  depth: $toc-depth$
+);
+$endif$
+
+$body$
+
+$if(citations)$
+$for(nocite-ids)$
+#cite(label("${it}"), form: none)
+$endfor$
+$if(csl)$
+
+#set bibliography(style: "$csl$")
+$elseif(bibliographystyle)$
+
+#set bibliography(style: "$bibliographystyle$")
+$endif$
+$if(bibliography)$
+
+#bibliography(($for(bibliography)$"$bibliography$"$sep$,$endfor$)$if(full-bibliography)$, full: true$endif$)
+$endif$
+$endif$
+$for(include-after)$
+
+$include-after$
+$endfor$

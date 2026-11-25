@@ -1,0 +1,2669 @@
+.tm-home-page.tm-job-home {
+  gap: 0;
+  padding: 0;
+}
+
+.tm-job-shell-main {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.tm-job-shell-body {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.tm-job-main {
+  box-sizing: border-box;
+}
+
+.tm-job-shell .tm-job-monitor-root {
+  position: static;
+}
+
+.tm-job-monitor-root {
+  width: 100%;
+  flex: 1;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.tm-job-page {
+  flex: 1;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.tm-job-drawer-float {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  z-index: 20;
+  display: flex;
+  position: fixed;
+  pointer-events: none;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  box-shadow: var(--tm-shadow-float);
+  transition: transform var(--tm-duration-page) var(--tm-easing-ios);
+  will-change: transform;
+}
+
+.tm-job-drawer-float.is-open {
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.tm-job-drawer-float .tm-agent-split-divider {
+  top: 0;
+  left: -3px;
+  z-index: 6;
+  position: absolute;
+}
+
+.tm-job-scroll {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 2px 0 12px;
+  box-sizing: border-box;
+}
+
+.tm-job-scroll-content {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+/* .tm-job-hint, */
+/* .tm-job-muted, */
+/* .tm-job-tip-text { */
+/*   font-size: 0.75rem !important; */
+/*   line-height: 1.5 !important; */
+/*   color: var(--tm-text-tertiary) !important; */
+/* } */
+
+/* .tm-job-muted.is-danger { */
+/*   color: #f87171 !important; */
+/* } */
+
+/* .tm-job-tip { */
+/*   display: flex; */
+/*   align-items: flex-start; */
+/*   justify-content: space-between; */
+/*   gap: 12px; */
+/*   padding: 10px 12px; */
+/*   border-radius: 10px; */
+/*   border: 1px solid var(--tm-border-subtle); */
+/*   background: var(--tm-bg-hover); */
+/* } */
+
+/* .tm-job-alarm-strip { */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   gap: 8px; */
+/*   padding: 10px 12px; */
+/*   border-radius: 10px; */
+/*   border: 1px solid rgba(239, 68, 68, 0.35); */
+/*   background: rgba(239, 68, 68, 0.08); */
+/* } */
+
+/* .tm-job-alarm-strip-title { */
+/*   font-size: 0.75rem !important; */
+/*   font-weight: 600 !important; */
+/*   color: var(--tm-bg-danger) !important; */
+/* } */
+
+/* .tm-job-alarm-strip-list { */
+/*   display: flex; */
+/*   flex-wrap: wrap; */
+/*   gap: 6px; */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-alarm-pill { */
+/*   display: inline-flex; */
+/*   align-items: center; */
+/*   gap: 6px; */
+/*   padding: 4px 10px !important; */
+/*   border-radius: 999px !important; */
+/*   background: rgba(0, 0, 0, 0.2); */
+/*   color: var(--tm-text-primary) !important; */
+/*   font-size: 0.75rem; */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-alarm-pill:hover { */
+/*   background: rgba(0, 0, 0, 0.35); */
+/* } */
+
+.tm-job-device-card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 0;
+  padding: 0;
+  border-radius: var(--tm-radius-row);
+  border: 1px solid var(--tm-border-subtle);
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.tm-job-device-card.is-disabled {
+  opacity: 0.72;
+  filter: grayscale(0.2);
+}
+
+/* .tm-job-toolbar-row { */
+/*   display: flex; */
+/*   align-items: center; */
+/*   gap: 8px; */
+/*   min-width: 0; */
+/* } */
+
+/* .tm-job-toolbar-search { */
+/*   flex: 1; */
+/*   min-width: 0; */
+/* } */
+
+/* .tm-job-toolbar-actions { */
+/*   display: flex; */
+/*   align-items: center; */
+/*   gap: 6px; */
+/*   flex-shrink: 0; */
+/* } */
+
+.tm-job-device-head {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px;
+}
+
+.MuiButtonBase-root.tm-job-device-head-toggle {
+  flex: 1;
+  min-width: 0;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start !important;
+  gap: 4px;
+  padding: 0 !important;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 0 !important;
+}
+
+.tm-job-device-card .tm-job-metric-list {
+  padding: 0 12px 12px;
+}
+
+.tm-job-device-chevron {
+  display: inline-flex;
+  align-items: center;
+  height: 21px;
+  flex-shrink: 0;
+  color: var(--tm-text-tertiary);
+}
+
+.tm-job-device-name {
+  flex: 1;
+  font-size: 0.9375rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px;
+  color: var(--tm-text-primary) !important;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tm-job-device-head-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease;
+}
+
+.tm-job-device-head:hover .tm-job-device-head-actions,
+.tm-job-device-head-actions.is-paused {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.tm-job-device-meta {
+  font-size: 0.75rem !important;
+  color: var(--tm-text-tertiary) !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tm-job-device-alert {
+  flex-shrink: 0;
+  font-size: 1rem !important;
+  color: var(--tm-text-warning) !important;
+}
+
+/* .tm-job-device-empty { */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   align-items: flex-start; */
+/*   gap: 10px; */
+/*   padding: 8px 0 4px; */
+/* } */
+
+.tm-job-metric-list.is-grid {
+  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.tm-job-metric-list.is-grid .tm-job-metric-chevron {
+  display: none;
+}
+
+.tm-job-metric-list.is-grid .tm-job-sparkline {
+  width: 64px !important;
+}
+
+.tm-job-device-card .MuiButtonBase-root.tm-device-item.tm-job-metric-row {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: 1px solid var(--tm-border-subtle) !important;
+}
+
+.tm-job-device-card .MuiButtonBase-root.tm-device-item.tm-job-metric-row:hover,
+.tm-job-device-card .MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-selected {
+  background: var(--tm-bg-hover) !important;
+  background-color: var(--tm-bg-hover) !important;
+  box-shadow: none !important;
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-add {
+  justify-content: center !important;
+  gap: 6px !important;
+  filter: none;
+  color: var(--tm-text-tertiary) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: 1px dashed var(--tm-border-subtle) !important;
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-add .MuiSvgIcon-root {
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-add .tm-job-metric-name {
+  color: inherit !important;
+  font-weight: 500 !important;
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-add:hover,
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-add.is-selected {
+  filter: none;
+  color: var(--tm-status-success) !important;
+  background: var(--tm-glass-bg-hover) !important;
+  background-color: var(--tm-glass-bg-hover) !important;
+  border-color: var(--tm-border-accent) !important;
+}
+
+.MuiButtonBase-root.tm-job-metric-row {
+  width: 100%;
+  position: relative;
+  min-height: 48px;
+  box-sizing: border-box;
+  justify-content: flex-start !important;
+  color: var(--tm-text-secondary) !important;
+  text-align: left;
+  filter: grayscale(0.25) saturate(0.88);
+}
+
+.MuiButtonBase-root.tm-job-metric-row:hover {
+  color: var(--tm-text-primary) !important;
+  filter: grayscale(0.1) saturate(0.95);
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-selected {
+  background: var(--tm-glass-bg-hover) !important;
+  background-color: var(--tm-glass-bg-hover) !important;
+  color: var(--tm-text-primary) !important;
+  filter: grayscale(0.1) saturate(0.95);
+}
+
+.MuiButtonBase-root.tm-job-metric-row:hover .tm-job-metric-name,
+.MuiButtonBase-root.tm-job-metric-row:hover .tm-job-metric-value,
+.MuiButtonBase-root.tm-job-metric-row.is-selected .tm-job-metric-name,
+.MuiButtonBase-root.tm-job-metric-row.is-selected .tm-job-metric-value {
+  color: var(--tm-text-primary) !important;
+  opacity: 1;
+}
+
+@keyframes tm-job-metric-breath-glow {
+  0% { opacity: 0; }
+  14% { opacity: 1; }
+  44% { opacity: 0.16; }
+  62% { opacity: 0.58; }
+  100% { opacity: 0; }
+}
+
+@keyframes tm-job-metric-breath-dot {
+  0% { opacity: 1; box-shadow: 0 0 0 0 color-mix(in srgb, var(--tm-flash-color) 55%, transparent); }
+  60% { opacity: 1; box-shadow: 0 0 0 7px color-mix(in srgb, var(--tm-flash-color) 0%, transparent); }
+  100% { opacity: 1; box-shadow: 0 0 0 0 color-mix(in srgb, var(--tm-flash-color) 0%, transparent); }
+}
+
+@keyframes tm-job-metric-breath-value {
+  0% { filter: brightness(1); text-shadow: none; }
+  14% { filter: brightness(1.55); text-shadow: 0 0 10px color-mix(in srgb, var(--tm-flash-color) 45%, transparent); }
+  44% { filter: brightness(1.08); text-shadow: 0 0 3px color-mix(in srgb, var(--tm-flash-color) 12%, transparent); }
+  62% { filter: brightness(1.35); text-shadow: 0 0 8px color-mix(in srgb, var(--tm-flash-color) 28%, transparent); }
+  100% { filter: brightness(1); text-shadow: none; }
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-flash,
+.MuiButtonBase-root.tm-job-overview-top-row.is-flash,
+.MuiButtonBase-root.tm-job-overview-water-row.is-flash {
+  --tm-flash-color: var(--tm-text-primary);
+  filter: none;
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-flash.is-firing {
+  --tm-flash-color: var(--tm-status-danger);
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-flash::after,
+.MuiButtonBase-root.tm-job-overview-top-row.is-flash::after,
+.MuiButtonBase-root.tm-job-overview-water-row.is-flash::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--tm-flash-color) 8%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tm-flash-color) 18%, transparent);
+  animation: tm-job-metric-breath-glow 1.6s ease-out 1 both;
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-flash .tm-job-status-dot,
+.MuiButtonBase-root.tm-job-overview-top-row.is-flash .tm-job-status-dot {
+  animation: tm-job-metric-breath-dot 1.6s ease-out 1;
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-metric-row.is-flash > *,
+.MuiButtonBase-root.tm-job-overview-top-row.is-flash > *,
+.MuiButtonBase-root.tm-job-overview-water-row.is-flash > * {
+  position: relative;
+  z-index: 1;
+}
+
+.MuiButtonBase-root.tm-job-metric-row.is-flash .tm-job-metric-value,
+.MuiButtonBase-root.tm-job-overview-top-row.is-flash .tm-job-overview-live-value,
+.MuiButtonBase-root.tm-job-overview-water-row.is-flash .tm-job-overview-water-value {
+  color: var(--tm-flash-color);
+  animation: tm-job-metric-breath-value 1.6s ease-out 1;
+}
+
+.MuiButtonBase-root.tm-job-metric-row.is-error .tm-job-metric-name,
+.MuiButtonBase-root.tm-job-metric-row.is-pending .tm-job-metric-name {
+  color: var(--tm-text-tertiary) !important;
+  font-weight: 400 !important;
+}
+
+.MuiButtonBase-root.tm-job-metric-row.is-firing {
+  box-shadow: inset 1px 0 0 var(--tm-status-danger);
+}
+
+.MuiButtonBase-root.tm-job-metric-row.is-firing .tm-job-metric-name {
+  color: var(--tm-job-metric-name-fg) !important;
+}
+
+.tm-job-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--tm-text-tertiary);
+}
+
+.tm-job-status-dot.is-ok {
+  background: var(--tm-status-success);
+  opacity: 0.25;
+}
+
+.tm-job-status-dot.is-firing {
+  background: var(--tm-status-danger);
+  opacity: 0.9;
+}
+
+.tm-job-status-dot.is-error,
+.tm-job-status-dot.is-pending {
+  background: var(--tm-text-tertiary);
+  opacity: 0.25;
+}
+
+.tm-job-metric-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.tm-job-metric-name {
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+  color: var(--tm-job-metric-label-fg) !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tm-job-metric-sub {
+  font-size: 0.6875rem !important;
+  color: var(--tm-text-tertiary) !important;
+  opacity: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tm-job-metric-value {
+  flex-shrink: 0;
+  min-width: 72px;
+  text-align: right;
+  font-size: 0.8125rem !important;
+  font-weight: 400 !important;
+  font-variant-numeric: tabular-nums;
+  color: var(--tm-job-metric-value-fg) !important;
+}
+
+.tm-job-metric-value.is-firing {
+  color: var(--tm-status-danger) !important;
+  opacity: 1;
+}
+
+.tm-job-metric-value.is-neutral {
+  font-size: 0.75rem !important;
+  font-weight: 400 !important;
+  color: var(--tm-text-tertiary) !important;
+  opacity: 1;
+}
+
+.tm-job-metric-chevron {
+  flex-shrink: 0;
+  font-size: 1.125rem !important;
+  color: var(--tm-text-tertiary);
+  opacity: 1;
+}
+
+.tm-job-sparkline {
+  flex-shrink: 0;
+  width: 64px;
+  height: 24px;
+  color: var(--tm-text-tertiary);
+}
+
+.tm-job-sparkline.is-ok {
+  color: var(--tm-status-success);
+  opacity: 0.32;
+}
+
+.tm-job-sparkline.is-firing {
+  color: var(--tm-status-danger);
+  opacity: 0.5;
+}
+
+.tm-job-sparkline.is-neutral {
+  color: var(--tm-text-tertiary);
+  opacity: 0.15;
+}
+
+.tm-job-drawer {
+  width: min(340px, 100%);
+  align-self: stretch;
+  flex-shrink: 0;
+  min-height: 0;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-left: 1px solid var(--tm-glass-dialog-border);
+  background: var(--tm-glass-drawer-bg);
+  background-color: var(--tm-glass-drawer-bg);
+  -webkit-backdrop-filter: var(--tm-glass-dialog-blur);
+  backdrop-filter: var(--tm-glass-dialog-blur);
+  box-shadow: var(--tm-glass-inset), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tm-job-drawer-float .tm-job-drawer {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  align-self: auto;
+  flex: 1;
+  min-width: 0;
+}
+
+.tm-job-drawer-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 8px;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--tm-border-subtle);
+}
+
+.tm-job-drawer-device {
+  min-width: 0;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  color: var(--tm-text-secondary) !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tm-job-drawer-title {
+  min-width: 0;
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  color: var(--tm-text-primary) !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tm-job-drawer-tabs {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4px;
+  padding: 10px 16px 0;
+  width: fit-content;
+}
+
+
+.tm-job-drawer-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tm-job-drawer-placeholder {
+  font-size: 0.8125rem !important;
+  color: var(--tm-text-tertiary) !important;
+}
+
+.tm-job-section-title,
+.tm-discover-section-title {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: var(--tm-text-tertiary) !important;
+  letter-spacing: 0.3px;
+}
+
+.tm-job-drawer-hint,
+.tm-job-drawer-error {
+  font-size: 0.75rem !important;
+}
+
+.tm-job-drawer-hint {
+  color: var(--tm-text-tertiary) !important;
+}
+
+.tm-job-drawer-error {
+  color: var(--tm-status-danger) !important;
+}
+
+.tm-job-field-row > *:first-of-type {
+  flex: 1;
+  min-width: 0;
+}
+
+.tm-job-field-side {
+  width: 86px;
+  flex-shrink: 0;
+}
+
+.tm-home-page:has(.tm-job-monitor-root) {
+  padding-bottom: 0;
+}
+
+.tm-job-drawer-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+  z-index: 2;
+  padding: 8px 12px;
+  border-top: 1px solid var(--tm-border-subtle);
+  background: var(--tm-bg-app);
+}
+
+.tm-job-drawer-actions .MuiButton-root.tm-btn {
+  width: 100% !important;
+  min-width: 0 !important;
+  flex: 1 1 auto;
+}
+
+.tm-job-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  color: var(--tm-icon-accent);
+}
+
+.tm-job-chart-ranges {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  width: fit-content;
+  padding: 2px;
+  border-radius: 8px;
+  border: 1px solid var(--tm-border-subtle);
+  background: var(--tm-bg-hover);
+}
+
+.MuiButtonBase-root.tm-job-chart-range {
+  height: 22px;
+  padding: 0 8px !important;
+  border-radius: 6px !important;
+  font-size: 0.6875rem;
+  color: var(--tm-text-tertiary) !important;
+}
+
+.MuiButtonBase-root.tm-job-chart-range.is-active,
+.MuiButtonBase-root.tm-job-tab.is-active {
+  background: var(--tm-bg-selected);
+  color: var(--tm-text-primary) !important;
+}
+
+.tm-job-chart-plot {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 180px;
+  cursor: crosshair;
+}
+
+.tm-job-chart-grid {
+  stroke: var(--tm-border-subtle);
+  stroke-width: 1;
+}
+
+.tm-job-chart-axis {
+  fill: var(--tm-text-tertiary);
+  font-size: 0.625rem;
+}
+
+.tm-job-chart-line {
+  stroke: currentColor;
+}
+
+.tm-job-chart-area {
+  fill: currentColor;
+  opacity: 0.12;
+}
+
+.tm-job-chart-dot {
+  fill: currentColor;
+}
+
+.tm-job-chart-cross {
+  stroke: var(--tm-text-tertiary);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.tm-job-chart-threshold {
+  stroke: var(--tm-status-danger);
+  stroke-width: 1;
+}
+
+.tm-job-chart-tip {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  pointer-events: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  border: 1px solid var(--tm-border-subtle);
+  background: var(--tm-bg-app);
+}
+
+.tm-job-chart-tip-time {
+  font-size: 0.6875rem !important;
+  color: var(--tm-text-tertiary) !important;
+}
+
+.tm-job-chart-tip-value {
+  font-size: 0.75rem !important;
+  font-variant-numeric: tabular-nums;
+  color: var(--tm-text-primary) !important;
+}
+
+.tm-job-chart.is-ok {
+  color: var(--tm-status-success);
+}
+
+.tm-job-chart.is-firing {
+  color: var(--tm-status-danger);
+}
+
+.tm-job-chart.is-neutral {
+  color: var(--tm-text-secondary);
+}
+
+.tm-job-chart-foot {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.tm-job-chart-empty,
+.tm-job-chart-caption {
+  font-size: 0.75rem !important;
+  color: var(--tm-text-tertiary) !important;
+}
+
+.tm-job-chart-caption {
+  min-width: 0;
+}
+
+.tm-job-chart-empty {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.tm-job-chart-foot .MuiButtonBase-root.tm-job-icon-btn {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.tm-job-chart-foot .MuiButtonBase-root.tm-job-icon-btn .MuiSvgIcon-root {
+  font-size: 1rem;
+}
+
+.MuiButtonBase-root.tm-job-icon-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px !important;
+  color: var(--tm-text-secondary) !important;
+}
+
+.MuiButtonBase-root.tm-job-icon-btn:hover {
+  background: var(--tm-bg-hover);
+  color: var(--tm-text-primary) !important;
+}
+
+.MuiButtonBase-root.tm-job-icon-btn.Mui-disabled:not(.is-busy) {
+  opacity: 0.45;
+}
+
+
+.MuiButtonBase-root.tm-job-icon-btn.is-busy .MuiSvgIcon-root {
+  animation: tm-job-icon-spin 0.7s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes tm-job-icon-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tm-job-view-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.MuiButtonBase-root.tm-job-view-btn:hover {
+  color: var(--tm-text-secondary) !important;
+}
+
+.MuiButtonBase-root.tm-job-view-btn.is-active {
+  background: var(--tm-bg-hover);
+  color: var(--tm-text-secondary) !important;
+}
+
+/* 搜索框本身只是一圈淡描边，里面塞实心按钮会把整条工具栏的重心拽过去 */
+.MuiButton-root.tm-job-add-btn {
+  font-weight: 500 !important;
+}
+
+/* .tm-job-section-title { */
+/*   margin-top: 10px !important; */
+/*   font-size: 0.75rem !important; */
+/*   font-weight: 600 !important; */
+/*   color: var(--tm-text-secondary) !important; */
+/* } */
+
+/* .tm-job-field { */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   gap: 2px; */
+/*   padding: 8px 10px; */
+/*   border-radius: 8px; */
+/*   background: var(--tm-bg-hover); */
+/* } */
+
+/* .tm-job-field-label { */
+/*   font-size: 0.6875rem !important; */
+/*   color: var(--tm-text-tertiary) !important; */
+/* } */
+
+/* .tm-job-field-row { */
+/*   display: flex; */
+/*   align-items: center; */
+/*   gap: 6px; */
+/*   min-width: 0; */
+/* } */
+
+/* .tm-job-field-row > *:first-of-type { */
+/*   flex: 1; */
+/*   min-width: 0; */
+/* } */
+
+/* .tm-job-field-side { */
+/*   width: 86px; */
+/*   flex-shrink: 0; */
+/* } */
+
+/* .tm-job-field-value { */
+/*   font-size: 0.75rem !important; */
+/*   color: var(--tm-text-primary) !important; */
+/*   word-break: break-all; */
+/*   font-family: var(--tm-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); */
+/* } */
+
+/* .tm-job-drawer-actions { */
+/*   display: flex; */
+/*   align-items: stretch; */
+/*   gap: 8px; */
+/*   width: 100%; */
+/*   margin-top: 12px; */
+/* } */
+
+/* .tm-job-drawer-actions .MuiButton-root.tm-btn { */
+/*   flex: 1 1 0; */
+/*   min-width: 0 !important; */
+/*   white-space: nowrap !important; */
+/* } */
+
+/* .tm-job-ai-card { */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   gap: 6px; */
+/*   padding: 10px 12px; */
+/*   border-radius: 10px; */
+/*   border: 1px solid rgba(96, 165, 250, 0.35); */
+/*   background: rgba(59, 130, 246, 0.1); */
+/* } */
+
+/* .tm-job-ai-card .tm-agent-md { */
+/*   font-size: 0.75rem; */
+/*   line-height: 1.55; */
+/* } */
+
+/* .tm-job-ai-card .tm-agent-md h1, */
+/* .tm-job-ai-card .tm-agent-md h2, */
+/* .tm-job-ai-card .tm-agent-md h3, */
+/* .tm-job-ai-card .tm-agent-md h4, */
+/* .tm-job-ai-card .tm-agent-md h5, */
+/* .tm-job-ai-card .tm-agent-md h6 { */
+/*   margin: 10px 0 4px; */
+/*   font-size: 0.8125rem; */
+/*   font-weight: 600; */
+/*   line-height: 1.35; */
+/* } */
+
+/* .tm-job-ai-card .tm-agent-md h1:first-child, */
+/* .tm-job-ai-card .tm-agent-md h2:first-child, */
+/* .tm-job-ai-card .tm-agent-md h3:first-child, */
+/* .tm-job-ai-card .tm-agent-md h4:first-child, */
+/* .tm-job-ai-card .tm-agent-md h5:first-child, */
+/* .tm-job-ai-card .tm-agent-md h6:first-child { */
+/*   margin-top: 0; */
+/* } */
+
+/* .tm-job-ai-card .tm-agent-md p { */
+/*   margin: 0 0 6px; */
+/* } */
+
+/* .tm-job-ai-card .tm-agent-md table { */
+/*   font-size: 0.6875rem; */
+/* } */
+
+/* .tm-job-ai-card .tm-agent-md thead th, */
+/* .tm-job-ai-card .tm-agent-md tbody td { */
+/*   padding: 4px 6px; */
+/* } */
+
+/* .tm-job-fold { */
+/*   min-width: 0; */
+/*   width: 100%; */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-fold-toggle { */
+/*   gap: 6px !important; */
+/*   padding: 4px 0 !important; */
+/*   border-radius: 6px !important; */
+/*   justify-content: flex-start !important; */
+/*   color: var(--tm-text-secondary) !important; */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-fold-toggle:hover { */
+/*   color: var(--tm-text-primary) !important; */
+/* } */
+
+/* .tm-job-fold-chevron { */
+/*   display: inline-flex; */
+/*   flex-shrink: 0; */
+/*   color: var(--tm-text-tertiary); */
+/* } */
+
+/* .tm-job-fold-title { */
+/*   min-width: 0; */
+/*   font-size: 0.75rem; */
+/*   font-weight: 600; */
+/*   line-height: 1.3; */
+/*   color: inherit; */
+/* } */
+
+/* .tm-job-fold-body { */
+/*   margin-top: 6px; */
+/*   min-width: 0; */
+/*   overflow: auto; */
+/* } */
+
+/* .tm-job-fold-body.is-summary { */
+/*   max-height: 420px; */
+/* } */
+
+/* .tm-job-fold-body.is-items { */
+/*   max-height: 420px; */
+/* } */
+
+/* .tm-job-fold-body.is-log { */
+/*   max-height: 420px; */
+/* } */
+
+/* .tm-job-fold-body.is-log .tm-job-ai-log { */
+/*   max-height: none; */
+/* } */
+
+/* .tm-job-ai-title { */
+/*   font-size: 0.75rem !important; */
+/*   font-weight: 600 !important; */
+/*   color: #93c5fd !important; */
+/* } */
+
+/* .tm-job-ai-body { */
+/*   font-size: 0.75rem !important; */
+/*   line-height: 1.5 !important; */
+/*   color: var(--tm-text-primary) !important; */
+/* } */
+
+/* .tm-job-ai-log { */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   gap: 4px; */
+/*   max-height: 420px; */
+/*   overflow: auto; */
+/*   padding: 8px 10px; */
+/*   border-radius: 8px; */
+/*   background: var(--tm-bg-hover); */
+/* } */
+
+/* .tm-job-ai-log-line { */
+/*   font-size: 0.75rem !important; */
+/*   line-height: 1.5 !important; */
+/*   white-space: pre-wrap; */
+/*   word-break: break-word; */
+/*   color: var(--tm-text-primary) !important; */
+/* } */
+
+/* .tm-job-ai-log-line.is-tool { */
+/*   color: #93c5fd !important; */
+/*   font-family: var(--tm-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); */
+/* } */
+
+/* .tm-job-ai-log-line.is-error { */
+/*   color: #f87171 !important; */
+/* } */
+
+/* .tm-job-discover-items { */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   gap: 6px; */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-discover-item { */
+/*   display: flex; */
+/*   align-items: flex-start; */
+/*   gap: 8px; */
+/*   width: 100%; */
+/*   padding: 8px 10px; */
+/*   border-radius: 10px; */
+/*   text-align: left; */
+/*   border: 1px solid var(--tm-border-subtle); */
+/*   background: var(--tm-bg-hover); */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-discover-item:hover { */
+/*   border-color: var(--tm-border-divider); */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-discover-item.is-selected { */
+/*   border-color: rgba(96, 165, 250, 0.55); */
+/*   background: rgba(59, 130, 246, 0.12); */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-discover-item.Mui-disabled { */
+/*   opacity: 0.6; */
+/* } */
+
+/* .tm-job-chart { */
+/*   width: 100%; */
+/*   padding: 8px 0 4px; */
+/* } */
+
+/* .tm-job-chart-ranges { */
+/*   display: flex; */
+/*   flex-wrap: wrap; */
+/*   gap: 4px; */
+/*   margin-bottom: 6px; */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-chart-range { */
+/*   min-width: 30px; */
+/*   height: 24px; */
+/*   padding: 0 8px !important; */
+/*   border-radius: 6px !important; */
+/*   border: 1px solid transparent; */
+/*   color: var(--tm-text-tertiary) !important; */
+/*   font-size: 0.6875rem; */
+/*   line-height: 1; */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-chart-range:hover { */
+/*   color: var(--tm-text-secondary) !important; */
+/*   background: var(--tm-bg-hover); */
+/* } */
+
+/* .MuiButtonBase-root.tm-job-chart-range.is-active { */
+/*   color: var(--tm-text-primary) !important; */
+/*   border-color: var(--tm-border-subtle); */
+/*   background: var(--tm-bg-hover); */
+/* } */
+
+/* .tm-job-chart-grid { */
+/*   stroke: var(--tm-border-subtle); */
+/*   stroke-width: 1; */
+/* } */
+
+/* .tm-job-chart-axis { */
+/*   fill: var(--tm-text-tertiary); */
+/*   font-size: 0.625rem; */
+/* } */
+
+/* .tm-job-chart-line { */
+/*   stroke: currentColor; */
+/* } */
+
+/* .tm-job-chart-area { */
+/*   fill: currentColor; */
+/*   opacity: 0.12; */
+/* } */
+
+/* .tm-job-chart-dot { */
+/*   fill: currentColor; */
+/* } */
+
+/* .tm-job-chart-plot { */
+/*   position: relative; */
+/*   min-width: 0; */
+/*   cursor: crosshair; */
+/* } */
+
+/* .tm-job-chart-cross { */
+/*   stroke: var(--tm-text-tertiary); */
+/*   stroke-width: 1; */
+/*   stroke-dasharray: 3 3; */
+/* } */
+
+/* .tm-job-chart-tip { */
+/*   position: absolute; */
+/*   top: 0; */
+/*   transform: translateX(-50%); */
+/*   pointer-events: none; */
+/*   padding: 4px 8px; */
+/*   border-radius: 6px; */
+/*   white-space: nowrap; */
+/*   border: 1px solid var(--tm-border-subtle); */
+/*   background: var(--tm-bg-app); */
+/* } */
+
+/* .tm-job-chart-tip-time { */
+/*   font-size: 0.6875rem !important; */
+/*   color: var(--tm-text-tertiary) !important; */
+/* } */
+
+/* .tm-job-chart-tip-value { */
+/*   font-size: 0.75rem !important; */
+/*   font-variant-numeric: tabular-nums; */
+/*   color: var(--tm-text-primary) !important; */
+/* } */
+
+/* .tm-job-chart-threshold { */
+/*   stroke: #f87171; */
+/*   stroke-width: 1; */
+/* } */
+
+/* .tm-job-chart.is-ok { */
+/*   color: #4ade80; */
+/* } */
+
+/* .tm-job-chart.is-warn { */
+/*   color: #fbbf24; */
+/* } */
+
+/* .tm-job-chart.is-firing { */
+/*   color: #f87171; */
+/* } */
+
+/* .tm-job-chart.is-neutral { */
+/*   color: var(--tm-text-secondary); */
+/* } */
+
+/* .tm-job-chart-caption { */
+/*   font-size: 0.6875rem !important; */
+/*   color: var(--tm-text-tertiary) !important; */
+/*   margin-top: 4px !important; */
+/* } */
+
+.tm-job-dialog-root {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tm-job-dialog-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity var(--tm-duration-page) var(--tm-easing-ios);
+}
+
+.tm-job-dialog-root.is-open .tm-job-dialog-backdrop {
+  opacity: 1;
+}
+
+.tm-job-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(520px, calc(100% - 32px));
+  max-height: calc(100% - 48px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 1px solid var(--tm-border-subtle);
+  background: var(--tm-glass-dialog-bg);
+  -webkit-backdrop-filter: var(--tm-glass-dialog-blur);
+  backdrop-filter: var(--tm-glass-dialog-blur);
+  overflow: hidden;
+  box-shadow: var(--tm-shadow-float);
+  transform: translate3d(0, 18px, 0) scale(0.98);
+  opacity: 0;
+  transition: transform var(--tm-duration-sheet) var(--tm-easing-ios), opacity var(--tm-duration-page) var(--tm-easing-ios);
+  will-change: transform, opacity;
+}
+
+.tm-job-dialog-root.is-open .tm-job-dialog {
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+}
+
+.tm-job-dialog.tm-job-dialog-wide {
+  width: min(640px, calc(100% - 48px));
+  height: min(460px, calc(100% - 64px));
+  max-height: min(460px, calc(100% - 64px));
+}
+
+.tm-job-dialog-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tm-job-dialog-body.tm-job-dialog-body-table {
+  overflow: hidden;
+  padding: 10px 14px 8px;
+  gap: 8px;
+}
+
+.tm-job-dialog-search {
+  flex-shrink: 0;
+}
+
+.tm-job-table-wrap {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid var(--tm-border-subtle);
+  border-radius: 8px;
+}
+
+
+.MuiTable-root.tm-job-device-table .MuiTableCell-root {
+  font-size: 0.75rem;
+  color: var(--tm-text-secondary);
+  border-bottom: 1px solid var(--tm-border-subtle);
+  padding: 7px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MuiTable-root.tm-job-device-table .MuiTableCell-head {
+  font-weight: 600;
+  color: var(--tm-text-tertiary);
+  background: var(--tm-bg-elevated);
+}
+
+.tm-job-table-check-slot {
+  width: 40px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  color: var(--tm-text-tertiary);
+}
+
+
+.tm-job-table-col-host {
+  width: 40%;
+}
+
+.tm-job-table-col-type {
+  width: 28%;
+}
+
+.tm-job-dialog-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--tm-border-subtle);
+}
+
+/* .tm-job-fake-input { */
+/*   padding: 8px 10px; */
+/*   border-radius: 8px; */
+/*   border: 1px solid var(--tm-border-subtle); */
+/*   font-size: 0.75rem; */
+/*   color: var(--tm-text-secondary); */
+/*   background: var(--tm-bg-hover); */
+/* } */
+
+/* .tm-job-fake-input.is-multiline { */
+/*   min-height: 56px; */
+/*   font-family: var(--tm-font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); */
+/* } */
+
+/* .tm-job-fake-input.is-chip { */
+/*   display: inline-flex; */
+/*   width: auto; */
+/*   padding: 4px 10px; */
+/* } */
+
+/* .tm-job-fake-input.is-chip.is-active { */
+/*   border-color: var(--tm-border-accent); */
+/*   color: var(--tm-text-primary); */
+/*   background: var(--tm-bg-selected); */
+/* } */
+
+/* .tm-job-fake-row { */
+/*   display: flex; */
+/*   flex-wrap: wrap; */
+/*   gap: 8px; */
+/* } */
+
+/* @media (max-width: 960px) { */
+/*   .tm-home-job-root { */
+/*     flex-direction: column; */
+/*   } */
+
+/*   .tm-job-drawer { */
+/*     width: 100%; */
+/*     border-left: none; */
+/*     border-top: 1px solid var(--tm-border-divider); */
+/*     max-height: 48%; */
+/*   } */
+/* } */
+
+.tm-job-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 2px;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid var(--tm-border-subtle);
+  background: var(--tm-bg-hover);
+}
+
+.MuiButtonBase-root.tm-job-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 12px !important;
+  border-radius: 8px !important;
+  color: var(--tm-text-secondary) !important;
+  font-size: 0.8125rem;
+}
+
+.MuiButtonBase-root.tm-job-tab:hover {
+  color: var(--tm-text-primary) !important;
+}
+
+.tm-job-tab-badge {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem !important;
+  line-height: 1 !important;
+  color: var(--tm-status-danger) !important;
+  background: var(--tm-status-danger-soft-bg);
+}
+
+.tm-job-alarm-list {
+  gap: 12px;
+  display: flex;
+  margin-top: 12px;
+  flex-direction: column;
+}
+
+.MuiButtonBase-root.tm-job-alarm-list-bar {
+  gap: 6px !important;
+  width: auto !important;
+  display: inline-flex !important;
+  min-height: 32px !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 4px 8px 4px 4px !important;
+  margin-bottom: 2px;
+  border-radius: 8px !important;
+  color: var(--tm-text-tertiary) !important;
+  background: transparent !important;
+}
+
+.MuiButtonBase-root.tm-job-alarm-list-bar:hover,
+.MuiButtonBase-root.tm-job-table-select-all:hover {
+  color: var(--tm-text-primary) !important;
+  background: var(--tm-bg-hover) !important;
+}
+
+.tm-job-alarm-list-bar-label {
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  color: inherit !important;
+}
+
+.MuiButtonBase-root.tm-job-alarm-row {
+  gap: 4px !important;
+  width: 100% !important;
+  display: flex !important;
+  padding: 12px 10px !important;
+  text-align: left !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  border-radius: var(--tm-radius-row) !important;
+  color: var(--tm-text-secondary) !important;
+  background: var(--tm-bg-app) !important;
+  background-color: var(--tm-bg-app) !important;
+  -webkit-backdrop-filter: var(--tm-glass-blur) !important;
+  backdrop-filter: var(--tm-glass-blur) !important;
+  border: 1px solid transparent !important;
+  box-sizing: border-box !important;
+  box-shadow: var(--tm-glass-inset) !important;
+  filter: grayscale(0.25) saturate(0.88);
+  transition: background-color var(--tm-duration-short) var(--tm-easing-standard), border-color var(--tm-duration-short) var(--tm-easing-standard), filter var(--tm-duration-short) var(--tm-easing-standard);
+}
+
+.MuiButtonBase-root.tm-job-alarm-row:hover {
+  background: var(--tm-glass-bg-hover) !important;
+  background-color: var(--tm-glass-bg-hover) !important;
+  color: var(--tm-text-primary) !important;
+  filter: grayscale(0.1) saturate(0.95);
+}
+
+.MuiButtonBase-root.tm-job-alarm-row.is-selected,
+.MuiButtonBase-root.tm-job-alarm-row.is-checked {
+  background: var(--tm-glass-bg-hover) !important;
+  background-color: var(--tm-glass-bg-hover) !important;
+  border-color: transparent !important;
+  filter: grayscale(0.1) saturate(0.95);
+}
+
+.MuiButtonBase-root.tm-job-alarm-row.is-firing {
+  box-shadow: inset 1px 0 0 var(--tm-status-danger) !important;
+}
+
+.MuiButtonBase-root.tm-job-alarm-row .tm-job-table-check-btn {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.MuiButtonBase-root.tm-job-alarm-row.is-selected .tm-job-table-check,
+.MuiButtonBase-root.tm-job-alarm-row.is-checked .tm-job-table-check {
+  color: var(--tm-text-primary);
+}
+
+.tm-job-alarm-row-status {
+  flex-shrink: 0;
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  color: var(--tm-text-primary) !important;
+}
+
+.tm-job-alarm-row-type {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  color: var(--tm-text-tertiary) !important;
+}
+
+.tm-job-alarm-row-time {
+  flex-shrink: 0;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  color: var(--tm-text-tertiary) !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.tm-job-alarm-row-meta {
+  gap: 6px;
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding-left: 14px;
+  font-size: 0.75rem !important;
+  line-height: 1.35 !important;
+  color: var(--tm-text-tertiary) !important;
+}
+
+.tm-job-alarm-row-meta-label {
+  flex-shrink: 0;
+}
+
+.tm-job-alarm-row-meta-value {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--tm-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.tm-job-discover-list {
+  margin-top: 8px;
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-discover-row {
+  border: 1px solid transparent !important;
+  background: var(--tm-bg-app) !important;
+  background-color: var(--tm-bg-app) !important;
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-discover-row:hover,
+.MuiButtonBase-root.tm-device-item.tm-job-discover-row.is-selected {
+  background: var(--tm-glass-bg-hover) !important;
+  background-color: var(--tm-glass-bg-hover) !important;
+}
+
+.MuiButtonBase-root.tm-device-item.tm-job-discover-row.is-selected {
+  border-color: color-mix(in srgb, var(--tm-icon-accent) 55%, transparent) !important;
+}
+
+.MuiButtonBase-root.tm-job-discover-row .tm-device-item-icon .tm-job-status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.MuiButtonBase-root.tm-job-discover-row .tm-job-discover-row-delete {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  color: var(--tm-text-tertiary) !important;
+}
+
+
+.MuiButtonBase-root.tm-job-discover-row .tm-job-device-explore-spin {
+  flex-shrink: 0;
+  color: var(--tm-icon-accent);
+}
+
+.MuiTableRow-root.tm-job-table-row {
+  cursor: pointer;
+}
+
+.MuiTableRow-root.tm-job-table-row:hover {
+  background: var(--tm-bg-hover);
+}
+
+.MuiTableRow-root.tm-job-table-row.is-selected,
+.MuiTableRow-root.tm-job-table-row.Mui-selected {
+  background: var(--tm-bg-selected) !important;
+}
+
+.MuiTableCell-root.tm-job-table-col-check {
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  padding: 0 !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.MuiTableCell-root.tm-job-table-col-check.is-select-all {
+  width: 88px;
+  min-width: 88px;
+  max-width: 88px;
+  text-align: left !important;
+  padding-left: 4px !important;
+}
+
+.MuiButtonBase-root.tm-job-table-select-all {
+  gap: 4px !important;
+  width: 100% !important;
+  min-height: 34px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 0 6px 0 2px !important;
+  border-radius: 6px !important;
+  color: var(--tm-text-tertiary) !important;
+  background: transparent !important;
+}
+
+
+.tm-job-table-select-all-label {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: inherit !important;
+  white-space: nowrap;
+}
+
+.MuiTableCell-root.tm-job-table-col-action {
+  width: 56px;
+  min-width: 56px;
+  max-width: 56px;
+  padding: 0 6px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.MuiButtonBase-root.tm-job-table-check-btn {
+  width: 40px;
+  height: 34px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 !important;
+  color: var(--tm-text-tertiary) !important;
+  background: transparent !important;
+}
+
+.MuiButtonBase-root.tm-job-table-check-btn:hover {
+  color: var(--tm-text-primary) !important;
+  background: transparent !important;
+}
+
+.tm-job-table-check {
+  font-size: 1.125rem !important;
+  width: 18px !important;
+  height: 18px !important;
+  color: inherit;
+}
+
+.MuiTableRow-root.tm-job-table-row.is-selected .tm-job-table-check,
+.MuiTableRow-root.tm-job-table-row.Mui-selected .tm-job-table-check {
+  color: var(--tm-text-primary);
+}
+
+.tm-job-alarm-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tm-job-alarm-empty {
+  padding: 8px 0;
+}
+
+.tm-job-alarm-banner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--tm-status-danger) 35%, transparent);
+  background: color-mix(in srgb, var(--tm-status-danger) 8%, transparent);
+}
+
+.tm-job-alarm-banner.is-ok {
+  border-color: color-mix(in srgb, var(--tm-status-success, #4ade80) 35%, transparent);
+  background: color-mix(in srgb, var(--tm-status-success, #4ade80) 8%, transparent);
+}
+
+.tm-job-alarm-banner-title {
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  color: var(--tm-text-primary) !important;
+}
+
+.tm-job-alarm-field {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  min-height: 38px;
+  padding: 4px 8px 4px 0;
+  border: 1px solid var(--tm-border-subtle);
+  border-radius: 7px;
+  background: transparent;
+}
+
+.tm-job-alarm-field-label {
+  font-size: 0.8125rem !important;
+  color: var(--tm-text-tertiary) !important;
+  width: 72px;
+  flex-shrink: 0;
+  padding-left: 8px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tm-job-alarm-field-value {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.8125rem !important;
+  color: var(--tm-text-primary) !important;
+  padding: 4px 8px;
+  word-break: break-all;
+}
+
+.tm-job-alarm-ai-summary.tm-agent-md {
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--tm-text-secondary);
+}
+
+.tm-job-alarm-ai-summary.tm-agent-md strong {
+  color: var(--tm-text-primary);
+}
+
+.tm-job-alarm-ai-summary.tm-agent-md h1,
+.tm-job-alarm-ai-summary.tm-agent-md h2,
+.tm-job-alarm-ai-summary.tm-agent-md h3,
+.tm-job-alarm-ai-summary.tm-agent-md h4,
+.tm-job-alarm-ai-summary.tm-agent-md h5,
+.tm-job-alarm-ai-summary.tm-agent-md h6 {
+  margin: 10px 0 4px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.tm-job-alarm-ai-summary.tm-agent-md h1:first-child,
+.tm-job-alarm-ai-summary.tm-agent-md h2:first-child,
+.tm-job-alarm-ai-summary.tm-agent-md h3:first-child,
+.tm-job-alarm-ai-summary.tm-agent-md h4:first-child,
+.tm-job-alarm-ai-summary.tm-agent-md h5:first-child,
+.tm-job-alarm-ai-summary.tm-agent-md h6:first-child {
+  margin-top: 0;
+}
+
+.tm-job-alarm-ai-summary.tm-agent-md p {
+  margin: 0 0 6px;
+}
+
+.tm-job-alarm-ai-summary.tm-agent-md ul,
+.tm-job-alarm-ai-summary.tm-agent-md ol {
+  margin: 4px 0;
+  padding-left: 16px;
+}
+
+.tm-job-alarm-ai-summary.tm-agent-md table {
+  font-size: 0.6875rem;
+}
+
+.tm-job-alarm-ai-summary.tm-agent-md thead th,
+.tm-job-alarm-ai-summary.tm-agent-md tbody td {
+  padding: 4px 6px;
+}
+
+.MuiButtonBase-root.tm-job-device-explore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  border-radius: 6px;
+  color: var(--tm-text-tertiary);
+  transition: color 120ms ease, background 120ms ease;
+}
+
+.MuiButtonBase-root.tm-job-device-explore:hover {
+  color: var(--tm-icon-accent);
+  background: var(--tm-bg-hover);
+}
+
+.MuiButtonBase-root.tm-job-device-explore.is-running,
+.MuiButtonBase-root.tm-job-device-explore.Mui-disabled {
+  color: var(--tm-icon-accent);
+}
+
+.tm-job-device-explore-spin {
+  color: var(--tm-icon-accent) !important;
+}
+
+/* 发现详情抽屉 */
+.tm-discover-result-scroll {
+  gap: 12px;
+}
+
+.tm-discover-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tm-discover-section .tm-job-alarm-ai-summary {
+  border-radius: 8px;
+  border: 1px solid var(--tm-border-subtle);
+  background: var(--tm-bg-app);
+  padding: 10px 12px 12px;
+}
+
+.MuiButtonBase-root.tm-discover-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: left;
+  border: 1px solid var(--tm-border-subtle);
+  background: transparent;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.MuiButtonBase-root.tm-discover-item:hover {
+  border-color: var(--tm-border-accent);
+}
+
+.MuiButtonBase-root.tm-discover-item.is-selected {
+  border-color: var(--tm-border-accent);
+  background: var(--tm-bg-selected);
+}
+
+.MuiButtonBase-root.tm-discover-item.Mui-disabled {
+  opacity: 0.6;
+}
+
+.tm-discover-item-name {
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  color: var(--tm-text-primary) !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tm-discover-item .tm-job-alarm-tag {
+  flex-shrink: 0;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.tm-discover-item .tm-job-alarm-tag.is-pending {
+  color: var(--tm-text-warning) !important;
+  background: color-mix(in srgb, var(--tm-text-warning) 14%, transparent);
+}
+
+.tm-discover-item .tm-job-alarm-tag.is-ok {
+  color: var(--tm-status-success) !important;
+  background: color-mix(in srgb, var(--tm-status-success) 14%, transparent);
+}
+
+
+.tm-discover-actions .MuiButton-root.tm-btn {
+  flex: 1 1 auto;
+}
+
+.MuiButton-root.tm-btn.tm-discover-stop {
+  flex: 0 0 auto;
+  min-width: 0 !important;
+  height: 24px;
+  padding: 2px 12px !important;
+  font-size: 0.75rem !important;
+}
+
+.tm-discover-convo-section {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 16px 16px;
+}
+
+.tm-discover-convo {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--tm-border-subtle);
+  background: var(--tm-bg-app);
+}
+
+.tm-discover-convo .tm-agent-message-wrap {
+  height: 100%;
+}
+
+.tm-discover-convo .tm-agent-message-body {
+  height: 100%;
+  padding: 10px 12px 12px;
+  font-size: 0.75rem;
+}
+
+html.tm-platform-mobile {
+  .tm-home-page.tm-job-home {
+    gap: 0;
+    padding: 0;
+  }
+
+  .tm-job-shell-main {
+    padding: 12px;
+  }
+
+  .tm-job-shell-body {
+    gap: 10px;
+  }
+
+  .tm-job-tabs {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .MuiButtonBase-root.tm-job-tab {
+    flex: 1;
+    justify-content: center;
+    height: 36px;
+  }
+
+  .tm-job-device-card {
+    border-radius: 12px;
+  }
+
+  .tm-job-device-head-actions {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .MuiButtonBase-root.tm-job-metric-row {
+    min-height: 48px;
+  }
+
+  .tm-job-alarm-list {
+    gap: 12px;
+  }
+
+  .MuiButtonBase-root.tm-job-alarm-row {
+    min-height: 64px;
+    padding: 14px 12px !important;
+    gap: 6px !important;
+  }
+
+
+  .tm-job-alarm-row-status {
+    font-size: 0.875rem !important;
+  }
+
+  .tm-job-alarm-row-meta {
+    padding-left: 14px;
+  }
+
+  .tm-job-drawer-float {
+    position: fixed;
+    top: var(--tm-vv-offset-top);
+    left: 0;
+    right: 0;
+    bottom: calc(-56px - env(safe-area-inset-bottom, 0px));
+    width: 100% !important;
+    height: auto;
+    z-index: 45;
+    background: var(--tm-bg-app);
+    transform: translate3d(0, 100dvh, 0);
+    transition: transform var(--tm-duration-sheet) var(--tm-easing-ios);
+  }
+
+  .tm-job-drawer-float.is-open {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .tm-job-drawer-float .tm-agent-split-divider {
+    display: none;
+  }
+
+  .tm-job-drawer-float .tm-job-drawer {
+    width: 100%;
+    max-width: none;
+    flex: 1;
+    border-left: none;
+    border-radius: 0;
+  }
+
+  .tm-job-drawer-head {
+    padding: 12px 12px 10px;
+  }
+
+  .tm-job-drawer-body {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .tm-job-drawer-actions {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .tm-job-field-side {
+    width: 100%;
+  }
+
+  .tm-home-searchbar .tm-job-view-toggle {
+    display: none;
+  }
+
+  .tm-job-page .tm-home-searchbar {
+    gap: 6px;
+  }
+
+  .MuiButton-root.tm-btn.tm-job-add-btn {
+    flex-shrink: 0;
+    min-width: 0 !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .tm-job-table-wrap {
+    margin: 0;
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .MuiTable-root.tm-job-device-table {
+    min-width: 520px;
+  }
+
+  .tm-job-page,
+  .tm-job-monitor-root {
+    min-width: 0;
+  }
+
+  .MuiTable-root.tm-job-device-table .MuiTableCell-root {
+    font-size: 0.75rem;
+    padding: 10px 8px;
+  }
+
+  .tm-discover-convo {
+    border-radius: 0;
+  }
+
+  .tm-job-alarm-ai-summary.tm-agent-md pre,
+  .tm-job-alarm-ai-summary.tm-agent-md code {
+    white-space: pre;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tm-job-drawer-device {
+    font-size: 0.75rem;
+  }
+
+  .tm-job-dialog-root {
+    position: fixed;
+    top: calc(var(--tm-vv-offset-top) + var(--tm-tabbar-height, 40px));
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: calc(var(--tm-app-height) - var(--tm-tabbar-height, 40px));
+    z-index: 46;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .tm-job-dialog,
+  .tm-job-dialog.tm-job-dialog-wide {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+    border: none;
+    transform: translate3d(0, 100dvh, 0);
+    opacity: 1;
+  }
+
+  .tm-job-dialog-root.is-open .tm-job-dialog,
+  .tm-job-dialog-root.is-open .tm-job-dialog.tm-job-dialog-wide {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  .tm-job-dialog-foot {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.tm-job-overview {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  padding: 2px 0 0;
+  box-sizing: border-box;
+}
+
+.tm-job-overview-banner {
+  gap: 10px;
+  display: flex;
+  flex-shrink: 0;
+  padding: 10px 12px;
+  align-items: flex-start;
+  box-sizing: border-box;
+  border-radius: var(--tm-radius-row);
+  border: 1px solid var(--tm-bg-warning-strong);
+  background-color: var(--tm-bg-warning);
+  -webkit-backdrop-filter: var(--tm-glass-blur);
+  backdrop-filter: var(--tm-glass-blur);
+  box-shadow: var(--tm-glass-inset);
+}
+
+.tm-job-overview-banner-icon {
+  margin-top: 1px;
+  flex-shrink: 0;
+  font-size: 1rem !important;
+  color: color-mix(in srgb, var(--tm-text-warning) 78%, var(--tm-text-primary));
+}
+
+
+.MuiTypography-root.tm-job-overview-banner-title {
+  font-size: 0.78125rem !important;
+  font-weight: 600 !important;
+  color: var(--tm-text-primary) !important;
+}
+
+.MuiTypography-root.tm-job-overview-banner-desc {
+  font-size: 0.71875rem !important;
+  line-height: 1.6 !important;
+  color: var(--tm-text-secondary) !important;
+}
+
+.MuiButtonBase-root.tm-job-overview-banner-close {
+  padding: 2px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  color: var(--tm-text-tertiary);
+}
+
+
+.tm-job-overview-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tm-job-overview-stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 12px;
+  border-radius: var(--tm-radius-row);
+  border: 1px solid var(--tm-border-subtle);
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.MuiTypography-root.tm-job-overview-stat-count {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--tm-text-primary);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: normal;
+}
+
+.tm-job-overview-stat.is-ok .tm-job-overview-stat-count {
+  color: var(--tm-status-success);
+}
+
+.tm-job-overview-stat.is-firing .tm-job-overview-stat-count {
+  color: var(--tm-status-danger);
+}
+
+.tm-job-overview-stat.is-error .tm-job-overview-stat-count,
+.tm-job-overview-stat.is-pending .tm-job-overview-stat-count,
+.tm-job-overview-stat.is-paused .tm-job-overview-stat-count {
+  color: var(--tm-text-secondary);
+}
+
+.MuiTypography-root.tm-job-overview-stat-label {
+  font-size: 12px;
+  color: var(--tm-text-tertiary);
+  letter-spacing: 0.4px;
+}
+
+.tm-job-overview-body {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+}
+
+.tm-job-overview-panel {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--tm-radius-row);
+  border: 1px solid var(--tm-border-subtle);
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.tm-job-overview-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px 8px;
+  flex-shrink: 0;
+}
+
+.MuiTypography-root.tm-job-overview-panel-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tm-text-primary);
+  letter-spacing: 0.4px;
+}
+
+.MuiTypography-root.tm-job-overview-panel-count {
+  padding: 0 6px;
+  border-radius: var(--tm-radius-control);
+  border: 1px solid var(--tm-border-subtle);
+  font-size: 11px;
+  line-height: 17px;
+  color: var(--tm-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.tm-job-overview-wall {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 8px;
+  padding: 2px 12px 16px;
+  margin-bottom: var(--tm-radius-row);
+  align-content: start;
+  box-sizing: border-box;
+  scrollbar-gutter: stable;
+}
+
+.MuiButtonBase-root.tm-job-overview-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--tm-overlay-ink) 5%, transparent);
+  background: transparent;
+  box-sizing: border-box;
+  text-align: left;
+  transition: border-color 140ms ease, background-color 140ms ease;
+}
+
+.MuiButtonBase-root.tm-job-overview-tile:hover,
+.MuiButtonBase-root.tm-job-overview-top-row:hover,
+.tm-job-overview-feed-row:hover,
+.MuiButtonBase-root.tm-job-overview-feed-row:hover,
+.MuiButtonBase-root.tm-job-overview-water-row:hover {
+  border-color: color-mix(in srgb, var(--tm-overlay-ink) 12%, transparent);
+  background: color-mix(in srgb, var(--tm-overlay-ink) 3%, transparent);
+}
+
+.MuiButtonBase-root.tm-job-overview-tile.is-firing {
+  border-color: color-mix(in srgb, var(--tm-status-danger) 30%, transparent);
+}
+
+.MuiButtonBase-root.tm-job-overview-tile.is-paused {
+  border-style: dashed;
+}
+
+.tm-job-overview-tile-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.tm-job-overview-tile-dot.is-ok {
+  opacity: 0.9;
+}
+
+.MuiTypography-root.tm-job-overview-tile-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--tm-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MuiTypography-root.tm-job-overview-tile-meta {
+  min-height: 15px;
+  font-size: 11px;
+  color: var(--tm-text-tertiary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MuiTypography-root.tm-job-overview-tile-meta.is-firing {
+  color: var(--tm-status-danger);
+}
+
+.MuiButtonBase-root.tm-job-overview-tile.is-more {
+  align-items: center;
+  justify-content: center;
+  border-style: dashed;
+}
+
+.MuiTypography-root.tm-job-overview-tile-more {
+  font-size: 12px;
+  color: var(--tm-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.tm-job-overview-list {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 2px 12px 16px;
+  margin-bottom: var(--tm-radius-row);
+  box-sizing: border-box;
+  scrollbar-gutter: stable;
+}
+
+.tm-job-overview-feed-row,
+.MuiButtonBase-root.tm-job-overview-feed-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 3px;
+  flex-shrink: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--tm-overlay-ink) 5%, transparent);
+  background: transparent;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.MuiTypography-root.tm-job-overview-feed-title,
+.MuiTypography-root.tm-job-overview-top-indicator {
+  font-size: 12.5px;
+  font-weight: 550;
+  color: var(--tm-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MuiTypography-root.tm-job-overview-feed-meta {
+  flex: 1;
+  min-width: 0;
+  font-size: 11px;
+  color: var(--tm-text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MuiTypography-root.tm-job-overview-feed-state {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--tm-text-secondary);
+}
+
+.MuiTypography-root.tm-job-overview-feed-state.is-firing {
+  color: var(--tm-status-danger);
+}
+
+.MuiTypography-root.tm-job-overview-feed-state.is-ok {
+  color: var(--tm-status-success);
+}
+
+.MuiTypography-root.tm-job-overview-feed-ago {
+  flex-shrink: 0;
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--tm-text-tertiary);
+}
+
+.MuiTypography-root.tm-job-overview-feed-text {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--tm-text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.MuiButtonBase-root.tm-job-overview-top-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  position: relative;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--tm-overlay-ink) 5%, transparent);
+  background: transparent;
+  box-sizing: border-box;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.tm-job-overview-pin {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: var(--tm-text-tertiary);
+  opacity: 0;
+  cursor: pointer;
+  transition:
+    opacity var(--tm-duration-short) var(--tm-easing-standard),
+    color var(--tm-duration-short) var(--tm-easing-standard),
+    background-color var(--tm-duration-short) var(--tm-easing-standard);
+}
+
+.tm-job-overview-pin svg {
+  font-size: 13px;
+}
+
+.MuiButtonBase-root.tm-job-overview-top-row:hover .tm-job-overview-pin {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.tm-job-overview-pin:hover {
+  color: var(--tm-text-primary);
+}
+
+.MuiButtonBase-root.tm-job-overview-top-row .tm-job-overview-pin.is-pinned {
+  color: var(--tm-text-secondary);
+  background: var(--tm-glass-bg);
+  -webkit-backdrop-filter: var(--tm-glass-blur);
+  backdrop-filter: var(--tm-glass-blur);
+  box-shadow: inset 0 0 0 1px var(--tm-glass-border);
+}
+
+.MuiButtonBase-root.tm-job-overview-top-row .tm-job-overview-pin.is-pinned:hover {
+  color: var(--tm-glass-fg);
+}
+
+.tm-job-overview-top-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.MuiTypography-root.tm-job-overview-top-device {
+  font-size: 11px;
+  color: var(--tm-text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MuiTypography-root.tm-job-overview-top-value {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--tm-text-secondary);
+}
+
+.MuiTypography-root.tm-job-overview-top-value.is-firing {
+  color: var(--tm-status-danger);
+}
+
+.MuiButtonBase-root.tm-job-overview-water-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--tm-overlay-ink) 5%, transparent);
+  background: transparent;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.MuiTypography-root.tm-job-overview-water-value {
+  flex-shrink: 0;
+  margin-left: auto;
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--tm-text-secondary);
+}
+
+.MuiTypography-root.tm-job-overview-water-value.is-firing {
+  color: var(--tm-status-danger);
+}
+
+.tm-job-overview-water-track {
+  height: 3px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--tm-overlay-ink) 7%, transparent);
+  overflow: hidden;
+}
+
+.tm-job-overview-water-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 300ms ease;
+}
+
+.tm-job-overview-water-fill.is-ok {
+  background: var(--tm-status-success);
+}
+
+.tm-job-overview-water-fill.is-warn {
+  background: var(--tm-text-warning);
+}
+
+.tm-job-overview-water-fill.is-firing {
+  background: var(--tm-status-danger);
+}
+
+.MuiTypography-root.tm-job-overview-live-value {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--tm-text-primary);
+}
+
+.MuiTypography-root.tm-job-overview-empty {
+  padding: 4px 16px 14px;
+  font-size: 12.5px;
+  color: var(--tm-text-tertiary);
+}
+
+html.tm-platform-mobile {
+  .tm-job-overview {
+    overflow-y: auto;
+  }
+
+  .tm-job-overview-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tm-job-overview-body {
+    flex: none;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+  }
+
+  .tm-job-overview-wall,
+  .tm-job-overview-list {
+    flex: none;
+    max-height: 46vh;
+  }
+
+  .tm-job-overview-pin {
+    opacity: 1;
+  }
+}

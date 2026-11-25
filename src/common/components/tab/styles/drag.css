@@ -1,0 +1,136 @@
+/* ── Tab drag insert spacer (BarItems.tsx) ───────────── */
+.tm-tab-drop-spacer {
+  height: 33px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  align-self: center;
+  pointer-events: none;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: var(--tm-droptarget-bg);
+  border: 1px solid var(--tm-droptarget-outline);
+  box-shadow: var(--tm-glass-inset);
+  animation: tm-tab-spacer-in var(--tm-duration-short) var(--tm-easing-decelerate) both;
+}
+
+@keyframes tm-tab-spacer-in {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+/* ── Tab drop indicator (TabBar.tsx) ─────────────────── */
+.tm-tab-drop-indicator {
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  z-index: 10;
+  position: absolute;
+  border-radius: 1px;
+  pointer-events: none;
+  background-color: var(--tm-droptarget-outline);
+}
+
+/* ── Pane drop overlay (PaneDropOverlay.tsx) ─────────── */
+@keyframes tm-drop-overlay-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tm-drop-overlay-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+.tm-drop-overlay {
+  position: fixed;
+  z-index: 8000;
+  pointer-events: none;
+  border-radius: 6px;
+  background-color: var(--tm-droptarget-bg);
+  outline: 1px solid var(--tm-droptarget-outline);
+  outline-offset: -1px;
+  box-sizing: border-box;
+  transition: top var(--tm-duration-medium) var(--tm-easing-standard),
+    left var(--tm-duration-medium) var(--tm-easing-standard),
+    width var(--tm-duration-medium) var(--tm-easing-standard),
+    height var(--tm-duration-medium) var(--tm-easing-standard);
+  animation: tm-drop-overlay-in var(--tm-duration-medium) var(--tm-easing-decelerate) both;
+  will-change: transform;
+}
+
+.tm-drop-landing {
+  position: fixed;
+  z-index: 8000;
+  border-radius: 6px;
+  pointer-events: none;
+  outline-offset: -1px;
+  box-sizing: border-box;
+  background-color: var(--tm-droptarget-bg);
+  outline: 1px solid var(--tm-droptarget-outline);
+  animation: tm-drop-overlay-out var(--tm-duration-medium) var(--tm-easing-decelerate) both;
+}
+
+/* ── FLIP layout animation (flipAnimation.ts) ─────────── */
+.tm-flipping {
+  transform-origin: 0 0;
+  transition: transform var(--tm-duration-medium) var(--tm-easing-standard);
+}
+
+/* ── Drag ghost (DragGhost.tsx) ───────────────────────── */
+.tm-drag-ghost {
+  left: 0;
+  top: 0;
+  gap: 4px;
+  display: flex;
+  z-index: 9999;
+  opacity: 0.65;
+  position: fixed;
+  padding-inline: 8px;
+  border-radius: 8px;
+  align-items: center;
+  pointer-events: none;
+  will-change: transform;
+  box-sizing: border-box;
+  backdrop-filter: blur(12px);
+  contain: layout paint style;
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--tm-shadow-drag);
+  border: 1px solid var(--tm-border);
+  background-color: var(--tm-bg-elevated);
+  color: var(--tm-state-inactive-fg-hover);
+  animation: tm-tab-ghost-in var(--tm-duration-short) var(--tm-easing-decelerate) both;
+}
+
+.tm-drag-ghost-icon {
+  display: flex;
+  align-items: center;
+}
+
+.tm-drag-ghost-title {
+  flex: 1;
+  min-width: 0;
+  overflow: clip;
+  font-size: 12px;
+  font-weight: 500;
+  user-select: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+

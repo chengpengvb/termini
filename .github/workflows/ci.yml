@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reject credential and signing files
+        run: |
+          forbidden=$(git ls-files | grep -iE '\.(p8|p12|pfx|jks|keystore|pem|key|mobileprovision|provisionprofile|cer|csr)$|(^|/)secrets/|(^|/)store-listing/|(^|/)\.env\.local$|service[-_]?account.*\.json$' || true)
+          if [ -n "$forbidden" ]; then
+            echo "::error::Credential or signing files must not be committed:"
+            echo "$forbidden"
+            exit 1
+          fi
+
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  lint:
+    name: Frontend lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+
+      - run: yarn lint

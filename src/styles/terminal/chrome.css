@@ -1,0 +1,89 @@
+:root[data-terminal-theme],
+:root[data-terminal-theme].tm-platform-mobile,
+.tm-terminal-shell[data-terminal-theme] {
+  --tm-bg-app: var(--tm-term-bg);
+  --tm-bg-group: var(--tm-term-bg);
+  --tm-bg-elevated: var(--tm-term-bg);
+  --tm-bg-button: var(--tm-term-bg);
+  --tm-bg-hover: color-mix(in srgb, var(--tm-term-fg) 6%, var(--tm-term-bg));
+  --tm-bg-active: color-mix(in srgb, var(--tm-term-fg) 8%, var(--tm-term-bg));
+  --tm-bg-selected: var(--tm-bg-active);
+  --tm-bg-contrast: var(--tm-term-fg);
+  --tm-bg-accent: var(--tm-bg-hover);
+  --tm-bg-accent-strong: var(--tm-bg-active);
+  --tm-text-primary: var(--tm-term-fg);
+  --tm-text-secondary: color-mix(in srgb, var(--tm-term-fg) 96%, var(--tm-term-bg));
+  --tm-text-tertiary: var(--tm-text-secondary);
+  --tm-text-icon: var(--tm-text-secondary);
+  --tm-text-on-accent: #ffffff;
+  --tm-text-on-danger: #ffffff;
+  --tm-bg-danger: #b02834;
+  --tm-status-danger: #f67a7a;
+  --tm-status-success: #30d158;
+  --tm-text-warning: #c8b06a;
+  --tm-bg-warning: color-mix(in srgb, var(--tm-text-warning) 8%, var(--tm-term-bg));
+  --tm-bg-warning-strong: color-mix(in srgb, var(--tm-text-warning) 12%, var(--tm-term-bg));
+  --tm-icon-accent: var(--tm-term-fg);
+  --tm-icon-file: var(--tm-text-secondary);
+  --tm-icon-on-tile: var(--tm-term-fg);
+  --tm-border: color-mix(in srgb, var(--tm-term-fg) 24%, var(--tm-term-bg));
+  --tm-border-subtle: var(--tm-border);
+  --tm-border-divider: color-mix(in srgb, var(--tm-term-fg) 16%, var(--tm-term-bg));
+  --tm-border-accent: color-mix(in srgb, var(--tm-term-fg) 75%, var(--tm-term-bg));
+  --tm-tab-outline: var(--tm-border);
+  --tm-glass-bg: var(--tm-term-bg);
+  --tm-glass-bg-hover: var(--tm-bg-hover);
+  --tm-glass-bg-active: var(--tm-bg-active);
+  --tm-glass-bg-selected: var(--tm-bg-selected);
+  --tm-glass-fg: var(--tm-term-fg);
+  --tm-glass-fg-strong: var(--tm-term-fg);
+  --tm-glass-border: var(--tm-border);
+  --tm-glass-border-hover: var(--tm-border-accent);
+  --tm-glass-inset: none;
+  --tm-glass-blur: none;
+  --tm-glass-dialog-bg: var(--tm-term-bg);
+  --tm-glass-dialog-border: var(--tm-border);
+  --tm-glass-dialog-blur: none;
+  --tm-glass-drawer-bg: var(--tm-term-bg);
+  --tm-tab-glass-idle-bg: var(--tm-term-bg);
+  --tm-tab-glass-idle-border: var(--tm-border-divider);
+  --tm-tab-glass-selected-bg: var(--tm-bg-selected);
+  --tm-tab-glass-selected-strong: var(--tm-bg-active);
+  --tm-tab-glass-hover-bg: var(--tm-bg-hover);
+  --tm-tab-glass-bar-bg: var(--tm-term-bg);
+  --tm-bg-tab-active: var(--tm-bg-active);
+  --tm-bg-tab-selected: var(--tm-bg-selected);
+  --tm-bg-tab-hover: var(--tm-bg-hover);
+  --tm-bg-window-control-hover: var(--tm-bg-hover);
+  --tm-bg-window-control-active: var(--tm-bg-active);
+  --tm-btn-primary-bg: var(--tm-bg-hover);
+  --tm-btn-primary-bg-hover: var(--tm-bg-active);
+  --tm-btn-primary-fg: var(--tm-term-fg);
+  --tm-btn-primary-border: var(--tm-border);
+  --tm-terminal-bg: var(--tm-term-bg);
+  --tm-terminal-fg: var(--tm-term-fg);
+  --tm-scrollbar-thumb: color-mix(in srgb, var(--tm-term-fg) 75%, var(--tm-term-bg));
+  --tm-sftp-search-bar-bg: var(--tm-term-bg);
+  --tm-sftp-entry-selected-bg: var(--tm-bg-selected);
+  --tm-sftp-entry-name-fg: var(--tm-term-fg);
+  --tm-sftp-entry-perms-fg: var(--tm-text-tertiary);
+  --tm-sftp-icon-folder: var(--tm-term-fg);
+  --tm-sftp-icon-file: var(--tm-text-secondary);
+  --tm-label-ink: var(--tm-term-fg);
+  --tm-overlay-ink: var(--tm-term-fg);
+  --tm-chip-ref-bg: var(--tm-bg-active);
+  --tm-chip-ref-close-hover-bg: var(--tm-bg-hover);
+}
+
+.tm-terminal-shell[data-terminal-theme] {
+  color-scheme: dark;
+  color: var(--tm-text-primary);
+  background: var(--tm-bg-app);
+}
+
+:is(:root, .tm-terminal-shell)[data-terminal-theme]:is([data-terminal-theme="daybreak"], [data-terminal-theme="seasalt"], [data-terminal-theme="kanagawa-lotus"], [data-terminal-theme="cb-light"]) {
+  color-scheme: light;
+  --tm-status-danger: #b02834;
+  --tm-status-success: #185e31;
+  --tm-text-warning: #785000;
+}

@@ -1,0 +1,94 @@
+[package]
+name = "termini-platform"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+mas = []
+
+[dependencies]
+anyhow = "1.0.103"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+async-trait = "0.1.89"
+parking_lot = "0.12.5"
+dashmap = "6.2.1"
+inventory = "0.3.24"
+summer = "0.7.1"
+summer-web = { version = "0.7.3", features = ["socket_io"] }
+tokio = { version = "1.52.2", features = ["full"] }
+tokio-util = "0.7"
+tauri = { version = "2.11.5", features = [] }
+tauri-plugin-haptics = "2"
+tauri-plugin-clipboard-manager = "2.3.2"
+tauri-plugin-opener = "2"
+tauri-plugin-notification = "2"
+sea-orm = { version = "1.1.20", features = ["macros", "sqlx-sqlite", "runtime-tokio-rustls"] }
+reqwest = { version = "0.13", default-features = false, features = ["rustls-no-provider", "gzip", "json"] }
+sysinfo = { version = "0.39.3", default-features = false, features = ["system", "disk"] }
+chrono = "0.4.45"
+url = "2"
+aes-gcm = "0.10.3"
+argon2 = "0.5.3"
+base64 = "0.22.1"
+rand = "0.8.5"
+uuid = { version = "1.23.4", features = ["v4"] }
+tauri-plugin-deep-link = "2.4.9"
+termini-core = { path = "../core" }
+termini-base = { path = "../base" }
+termini-macros = { path = "../../../macros" }
+sys-locale = "0.3"
+zip = { version = "8.6.0", default-features = false, features = ["deflate"] }
+
+[target.'cfg(any(target_os = "windows", target_os = "macos", target_os = "linux"))'.dependencies]
+tauri = { version = "2.11.5", features = ["tray-icon"] }
+clipboard-rs = { version = "0.3.5", default-features = false, features = ["image"] }
+drag = "2.1.0"
+tauri-plugin-autostart = "2"
+enigo = "0.6"
+desktop-core = { path = "../../desktop/core" }
+protocol-serial = { path = "../../protocol/serial" }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+rdev = { git = "https://github.com/Narsil/rdev.git", rev = "b7e201bf80be7b9632207366f277d29fe732b9c1" }
+winreg = "0.56.0"
+windows-sys = { version = "0.61", features = ["Win32_Globalization", "Win32_System_JobObjects"] }
+desktop-windows = { path = "../../desktop/windows" }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+desktop-apple = { path = "../../desktop/apple" }
+dispatch = "0.2"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+rdev = { git = "https://github.com/Narsil/rdev.git", rev = "b7e201bf80be7b9632207366f277d29fe732b9c1", features = ["x11"] }
+desktop-linux = { path = "../../desktop/linux" }
+
+[target.'cfg(not(target_os = "ios"))'.dependencies]
+portable-pty = "0.9.0"
+
+[target.'cfg(target_os = "android")'.dependencies]
+jni = "0.21.1"
+jni22 = { package = "jni", version = "0.22.4" }
+ndk-context = "0.1.1"
+rustls-platform-verifier = "0.7.0"
+
+[target.'cfg(target_os = "ios")'.dependencies]
+block2 = "0.6"
+dispatch = "0.2"
+objc2 = "0.6"
+objc2-foundation = { version = "0.3.2", features = ["NSArray", "NSPathUtilities", "NSSet", "NSString", "NSURL"] }
+objc2-ui-kit = { version = "0.3.2", features = [
+    "block2",
+    "UIActivity",
+    "UIActivityViewController",
+    "UIApplication",
+    "UIResponder",
+    "UIScene",
+    "UIView",
+    "UIViewController",
+    "UIWindow",
+    "UIWindowScene",
+] }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2.189"

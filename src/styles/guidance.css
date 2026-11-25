@@ -1,0 +1,107 @@
+.tm-guidance-root {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  font-family: var(--tm-font-ui);
+}
+
+.tm-guidance-spot {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4);
+}
+
+.tm-guidance-tip {
+  position: fixed;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 280px;
+  overflow: visible;
+  pointer-events: auto;
+  padding: 14px 14px 12px;
+  background: var(--tm-glass-dialog-bg);
+  border: 1px solid var(--tm-glass-dialog-border);
+  border-radius: var(--tm-dialog-radius);
+  box-shadow: var(--tm-glass-dialog-shadow);
+  -webkit-backdrop-filter: var(--tm-glass-dialog-blur);
+  backdrop-filter: var(--tm-glass-dialog-blur);
+}
+
+.tm-guidance-beak {
+  position: absolute;
+  width: 14px;
+  height: 7px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.tm-guidance-beak.is-left {
+  width: 7px;
+  height: 14px;
+}
+
+.tm-guidance-beak.is-bottom {
+  width: 14px;
+  height: 7px;
+}
+
+.tm-guidance-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--tm-text-primary);
+}
+
+.tm-guidance-body {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--tm-text-secondary);
+}
+
+.tm-guidance-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 8px;
+}
+
+.tm-guidance-skip {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--tm-text-tertiary);
+  font: 500 13px var(--tm-font-ui);
+  height: var(--tm-action-btn-height);
+}
+
+.tm-guidance-btn {
+  height: var(--tm-action-btn-height);
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: var(--tm-radius-control);
+  background: var(--tm-glass-bg);
+  color: var(--tm-glass-fg);
+  font: 500 13px var(--tm-font-ui);
+  box-shadow: var(--tm-glass-inset);
+  -webkit-backdrop-filter: var(--tm-glass-blur);
+  backdrop-filter: var(--tm-glass-blur);
+}
+
+.tm-guidance-btn.is-off {
+  color: var(--tm-text-tertiary);
+  opacity: 0.45;
+}
+
+html.tm-platform-mobile .tm-guidance-tip {
+  width: min(280px, calc(100vw - 24px));
+}
+
+html.tm-platform-mobile .tm-guidance-skip,
+html.tm-platform-mobile .tm-guidance-btn {
+  touch-action: manipulation;
+}

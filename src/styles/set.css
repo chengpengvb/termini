@@ -1,0 +1,1142 @@
+/* ================================================================
+ * Set dialog (设置)
+ * ================================================================ */
+.MuiPaper-root.tm-set-dialog-paper {
+    width: 880px !important;
+    height: 620px !important;
+    max-width: 94vw !important;
+    max-height: 88vh !important;
+    background-image: none !important;
+    background: var(--tm-glass-dialog-bg) !important;
+    background-color: var(--tm-glass-dialog-bg) !important;
+    -webkit-backdrop-filter: var(--tm-glass-dialog-blur);
+    backdrop-filter: var(--tm-glass-dialog-blur);
+    border-radius: var(--tm-dialog-radius) !important;
+    border: 1px solid var(--tm-glass-dialog-border) !important;
+    box-shadow: var(--tm-glass-dialog-shadow) !important;
+}
+
+.tm-set-root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+    position: relative;
+}
+
+.tm-set-sidebar,
+.tm-set-body {
+    background: transparent;
+}
+
+.tm-set-body {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.tm-set-sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 8px;
+    overflow-y: auto;
+    border-right: 1px solid var(--tm-border-divider);
+}
+
+.MuiButtonBase-root.tm-set-sidebar-item {
+    min-height: 34px !important;
+    border-radius: var(--tm-radius-control) !important;
+    padding: 0 10px !important;
+    gap: 10px !important;
+    justify-content: flex-start !important;
+    color: var(--tm-text-secondary) !important;
+    transition: background-color 120ms ease, color 120ms ease;
+}
+
+.MuiButtonBase-root.tm-set-sidebar-item:hover {
+    background-color: var(--tm-bg-hover) !important;
+    color: var(--tm-text-primary) !important;
+}
+
+.MuiButtonBase-root.tm-set-sidebar-item.is-selected {
+    background-color: var(--tm-bg-selected) !important;
+    color: var(--tm-text-primary) !important;
+}
+
+.tm-set-sidebar-icon {
+    font-size: 1.0625rem !important;
+    flex-shrink: 0;
+    color: inherit;
+}
+
+.tm-set-sidebar-label {
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.1px !important;
+    color: inherit;
+}
+
+.tm-set-content {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+    padding: 22px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+.tm-set-content:has(> .tm-set-content-inner) {
+    overflow: hidden;
+    padding: 0;
+    gap: 0;
+}
+
+.tm-set-content-inner {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+    padding: 22px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tm-set-content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.tm-set-content-title {
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    color: var(--tm-text-primary);
+}
+
+.tm-set-content-divider {
+    height: 1px;
+    flex-shrink: 0;
+    background-color: var(--tm-border-divider);
+}
+
+.MuiTypography-root.tm-set-section-tip {
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    color: var(--tm-text-secondary) !important;
+}
+
+.MuiTypography-root.tm-set-section-tip.is-error {
+    color: var(--tm-status-danger) !important;
+}
+
+/* ── Setting card ─────────────────────────────────── */
+.tm-set-card {
+    display: flex;
+    flex-shrink: 0;
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: var(--tm-radius-row);
+    border: 1px solid var(--tm-border-subtle);
+    background-color: var(--tm-bg-app);
+}
+
+.tm-set-card-head {
+    gap: 20px;
+    display: flex;
+    padding: 13px 16px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.tm-set-card-head.is-toggle {
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    transition: background-color var(--tm-duration-short) var(--tm-easing-standard);
+}
+
+.tm-set-card-head.is-toggle:hover {
+    background-color: var(--tm-bg-hover);
+}
+
+.tm-set-card-head-main,
+.tm-about-version-main {
+    gap: 4px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.MuiTypography-root.tm-set-card-title {
+    font-size: 0.8125rem !important;
+    font-weight: 600 !important;
+    line-height: 18px !important;
+    color: var(--tm-text-primary) !important;
+}
+
+.MuiTypography-root.tm-set-card-desc {
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+    color: var(--tm-text-tertiary) !important;
+}
+
+.tm-set-card-head-action {
+    gap: 10px;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.tm-set-card-body {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    border-top: 1px solid var(--tm-border-divider);
+}
+
+.tm-set-card-body .tm-empty-state {
+    padding: 28px 20px 32px;
+}
+
+.tm-set-card-body .tm-empty-state-title {
+    cursor: pointer;
+}
+
+.tm-set-row {
+    gap: 20px;
+    display: flex;
+    flex-shrink: 0;
+    padding: 11px 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tm-set-row + .tm-set-row {
+    border-top: 1px solid var(--tm-border-divider);
+}
+
+
+.MuiTypography-root.tm-set-row-label {
+    font-size: 0.78125rem !important;
+    font-weight: 500 !important;
+    line-height: 17px !important;
+    color: var(--tm-text-primary) !important;
+}
+
+.MuiTypography-root.tm-set-row-hint {
+    font-size: 0.71875rem !important;
+    line-height: 1.55 !important;
+    color: var(--tm-text-tertiary) !important;
+}
+
+.MuiTypography-root.tm-set-row-hint.is-error {
+    color: var(--tm-status-danger) !important;
+}
+
+.tm-set-row-control {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.tm-set-theme-control {
+    width: 320px;
+    max-width: 100%;
+}
+
+.tm-theme-item-list.is-compact {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+}
+
+.tm-theme-item-list.is-compact .MuiButtonBase-root.tm-theme-item {
+    position: relative;
+    min-width: 0;
+    min-height: 46px;
+    gap: 8px !important;
+    padding: 6px 18px 6px 8px !important;
+    border-radius: 8px !important;
+}
+
+.tm-theme-item-list.is-compact .tm-theme-item-swatch {
+    width: 32px;
+    height: 26px;
+    gap: 3px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.tm-theme-item-list.is-compact .tm-theme-item-swatch-line {
+    height: 2px;
+}
+
+.tm-theme-item-list.is-compact .tm-device-item-name {
+    font-size: 0.75rem !important;
+}
+
+.tm-theme-item-list.is-compact .tm-device-item-ip {
+    display: none;
+}
+
+.tm-theme-item-list.is-compact .MuiSvgIcon-root {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+}
+
+html.tm-platform-mobile .tm-set-root.is-mobile .tm-set-row.tm-set-theme-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+html.tm-platform-mobile .tm-set-root.is-mobile .tm-set-row-control.tm-set-theme-control {
+    display: block;
+    width: 100%;
+    max-width: none;
+}
+
+/* 目录列表、忽略规则这类需要整行宽度的控件: 标签在上、控件在下,
+   两者左边缘都对齐卡片内边距, 不再各自缩在右侧不同位置。 */
+.tm-set-row.is-column {
+    gap: 10px;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.tm-set-row.is-column .tm-set-row-main {
+    width: 100%;
+}
+
+.MuiTypography-root.tm-set-index-dir-path {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.75rem !important;
+    font-family: var(--tm-font-mono) !important;
+    color: var(--tm-text-primary) !important;
+}
+
+.MuiTypography-root.tm-set-index-dir-state {
+    font-size: 0.6875rem !important;
+    color: var(--tm-text-tertiary) !important;
+}
+
+.MuiTypography-root.tm-set-index-dir-state.is-failed {
+    color: var(--tm-status-danger) !important;
+}
+
+/* ── Master key phrase ─────────────────────────────────── */
+.tm-set-phrase {
+    gap: 10px;
+    display: flex;
+    flex-shrink: 0;
+    padding: 12px 16px;
+    flex-direction: column;
+    border-top: 1px solid var(--tm-border-divider);
+    background-color: var(--tm-bg-selected);
+}
+
+.MuiTypography-root.tm-set-phrase-text {
+    user-select: all;
+    word-break: break-all;
+    font-size: 0.8125rem !important;
+    line-height: 1.7 !important;
+    font-family: var(--tm-font-mono) !important;
+    color: var(--tm-text-primary) !important;
+}
+
+.MuiTypography-root.tm-set-phrase-note {
+    min-width: 0;
+    font-size: 0.71875rem !important;
+    line-height: 1.55 !important;
+    color: var(--tm-text-tertiary) !important;
+}
+
+
+.MuiButtonBase-root.tm-set-add-btn {
+    height: 28px !important;
+    min-height: 28px !important;
+    gap: 4px;
+    flex-shrink: 0;
+    padding: 0 10px !important;
+}
+
+.tm-set-add-btn-icon {
+    font-size: 1rem !important;
+}
+
+.tm-set-add-btn-label {
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    color: inherit;
+}
+
+.MuiTypography-root.tm-set-placeholder {
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    color: var(--tm-text-secondary) !important;
+}
+
+.tm-set-saved-item {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    transition: background-color 120ms ease;
+}
+
+.tm-set-saved-item + .tm-set-saved-item {
+    border-top: 1px solid var(--tm-border-divider);
+}
+
+.tm-set-saved-item:hover {
+    background-color: var(--tm-bg-selected);
+}
+
+.tm-set-saved-item-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--tm-text-secondary);
+    border: 1px solid var(--tm-border-subtle);
+    background-color: var(--tm-bg-selected);
+}
+
+.tm-set-saved-item-title {
+    font-size: 0.8125rem !important;
+    font-weight: 600 !important;
+    color: var(--tm-text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tm-set-saved-item-sub {
+    font-size: 0.75rem !important;
+    color: var(--tm-text-tertiary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tm-set-saved-item-actions {
+    gap: 2px;
+    opacity: 0;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    pointer-events: none;
+    transition: opacity 120ms ease;
+}
+
+.tm-set-saved-item:hover .tm-set-saved-item-actions {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.MuiButtonBase-root.tm-set-saved-item-action {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px !important;
+    color: var(--tm-text-tertiary) !important;
+}
+
+.MuiButtonBase-root.tm-set-saved-item-action:hover {
+    color: var(--tm-text-primary) !important;
+    background-color: var(--tm-bg-selected) !important;
+}
+
+.MuiButtonBase-root.tm-set-saved-item-action.is-danger:hover {
+    color: var(--tm-status-danger) !important;
+}
+
+/* ── Add model dialog ─────────────────────────────────── */
+.tm-set-add-model-overlay {
+    inset: 0;
+    opacity: 0;
+    z-index: 20;
+    display: flex;
+    position: absolute;
+    align-items: stretch;
+    justify-content: stretch;
+    pointer-events: none;
+    background: var(--tm-bg-app);
+    transition: opacity var(--tm-duration-page) var(--tm-easing-ios);
+}
+
+.tm-set-add-model-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.tm-set-add-model-paper {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 22px 28px;
+    background: var(--tm-bg-app);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+}
+
+.tm-set-add-model-overlay.is-open .tm-set-add-model-paper {
+    transform: none;
+    opacity: 1;
+}
+
+.tm-set-add-model-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    padding: 0 0 12px;
+    border-bottom: 1px solid var(--tm-border-subtle);
+    background: transparent;
+}
+
+.tm-set-add-model-title {
+    font-size: 0.875rem !important;
+    font-weight: 700 !important;
+    color: var(--tm-text-primary);
+    flex-shrink: 0;
+}
+
+.MuiButtonBase-root.tm-set-add-model-close:hover {
+    color: var(--tm-text-primary) !important;
+    background-color: var(--tm-bg-selected) !important;
+}
+
+.tm-set-add-model-close-icon {
+    font-size: 1rem !important;
+}
+
+.tm-set-add-model-body {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    min-height: 0;
+    gap: 12px;
+    padding: 16px 0;
+    overflow: auto;
+}
+
+.tm-set-add-model-field {
+    display: flex;
+    align-items: center;
+    min-height: 38px;
+    border: 1px solid var(--tm-border-subtle);
+    border-radius: 7px;
+    background-color: transparent;
+    transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.tm-set-add-model-field:hover {
+    background-color: var(--tm-bg-hover);
+}
+
+.tm-set-add-model-field-label {
+    width: 80px;
+    flex-shrink: 0;
+    padding-left: 8px;
+    font-size: 0.8125rem !important;
+    color: var(--tm-text-tertiary);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.MuiButtonBase-root.tm-set-add-model-field-trigger {
+    flex: 1;
+    min-width: 0;
+    padding: 4px 8px !important;
+    font-size: 0.8125rem !important;
+    color: var(--tm-text-primary) !important;
+    justify-content: flex-start !important;
+    text-align: left;
+}
+
+.MuiButtonBase-root.tm-set-add-model-field-trigger.is-empty {
+    color: var(--tm-text-tertiary) !important;
+}
+
+.tm-set-add-model-field-value {
+    width: 100%;
+    white-space: nowrap;
+    overflow: clip;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.tm-set-add-model-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0 0;
+    border-top: 1px solid var(--tm-border-subtle);
+}
+
+.tm-set-add-model-footer-spacer {
+    flex: 1;
+}
+
+.MuiTypography-root.tm-set-add-model-error {
+    font-size: 0.75rem !important;
+    color: var(--tm-status-danger) !important;
+    margin-right: 12px !important;
+}
+
+.tm-set-add-model-search {
+    gap: 6px;
+    display: flex;
+    padding: 5px 8px;
+    border-radius: 6px;
+    align-items: center;
+    margin: 4px 4px 6px;
+    background-color: var(--tm-bg-app);
+    border: 1px solid var(--tm-border-subtle);
+}
+
+.tm-set-add-model-search:focus-within {
+    border-color: var(--tm-border-accent);
+}
+
+.tm-set-add-model-search-icon {
+    font-size: 0.875rem !important;
+    flex-shrink: 0;
+    color: var(--tm-text-tertiary);
+}
+
+.tm-set-add-model-search-input {
+    flex: 1;
+    font-size: 0.8125rem !important;
+    color: var(--tm-text-primary) !important;
+}
+
+
+.MuiPaper-root.tm-set-add-model-menu-paper {
+    width: 300px !important;
+    margin-top: 4px !important;
+}
+
+.tm-set-add-model-menu-list {
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.tm-set-add-model-menu-empty {
+    padding: 10px 12px 12px;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--tm-text-tertiary);
+}
+
+html.tm-platform-mobile .tm-set-add-model-overlay {
+  inset: 0;
+}
+
+html.tm-platform-mobile .tm-set-add-model-body {
+  flex: 1 1 auto;
+}
+
+html.tm-platform-mobile {
+
+  .tm-set-root.is-mobile {
+    width: 100%;
+    height: 100%;
+  }
+
+  .tm-set-root.is-mobile .tm-set-body {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .tm-set-root.is-mobile .tm-set-page {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--tm-bg-app);
+    transition: transform var(--tm-duration-page) var(--tm-easing-ios);
+    will-change: transform;
+  }
+
+  .tm-set-root.is-mobile .tm-set-page.is-menu {
+    z-index: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .tm-set-root.is-mobile .tm-set-page.is-detail {
+    z-index: 2;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .tm-set-root.is-mobile.is-drilled .tm-set-page.is-menu {
+    transform: translate3d(-22%, 0, 0);
+  }
+
+  .tm-set-root.is-mobile.is-drilled .tm-set-page.is-detail {
+    transform: translate3d(0, 0, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tm-set-root.is-mobile .tm-set-page {
+      transition: none;
+    }
+  }
+
+  .tm-set-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .MuiTypography-root.tm-set-row-label {
+    font-weight: 400 !important;
+    color: var(--tm-text-secondary) !important;
+  }
+
+  .tm-set-row-control {
+    width: 100%;
+  }
+
+  .tm-set-mobile-scroll {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 2px 16px var(--tm-home-nav-clearance);
+    overflow-x: hidden;
+    overflow-y: auto;
+    touch-action: pan-y;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  .tm-set-mobile-scroll,
+  .tm-set-mobile-detail > .tm-set-content,
+  .tm-set-mobile-detail > .tm-set-content > .tm-set-content-inner {
+    scrollbar-width: none;
+  }
+
+  .tm-set-mobile-scroll::-webkit-scrollbar,
+  .tm-set-mobile-detail > .tm-set-content::-webkit-scrollbar,
+  .tm-set-mobile-detail > .tm-set-content > .tm-set-content-inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tm-set-mobile-detail .tm-set-content-header {
+    justify-content: flex-end;
+  }
+
+  .tm-set-mobile-detail .tm-set-content-header:not(:has(.MuiButtonBase-root)) {
+    display: none;
+  }
+
+  .tm-set-mobile-detail .tm-set-content-header .MuiTypography-root.tm-set-content-title {
+    display: none;
+  }
+
+  .tm-set-mobile-detail .MuiButtonBase-root.tm-set-add-btn {
+    gap: 6px;
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 14px 0 10px !important;
+    border-radius: 12px !important;
+    color: var(--tm-btn-primary-fg) !important;
+    background: var(--tm-btn-primary-bg) !important;
+    background-color: var(--tm-btn-primary-bg) !important;
+  }
+
+  .tm-set-mobile-detail .tm-set-add-btn-icon {
+    font-size: 1.25rem !important;
+  }
+
+  .tm-set-mobile-detail .tm-set-add-btn-label {
+    font-size: 0.9375rem !important;
+  }
+
+  .tm-set-mobile-detail .tm-about-version-card,
+  .tm-set-mobile-detail .tm-about-links {
+    margin-bottom: 0;
+    border-radius: 18px;
+    border-color: var(--tm-mobile-card-border);
+    background: var(--tm-mobile-card-bg);
+  }
+
+  .tm-set-mobile-detail .MuiButtonBase-root.tm-about-link {
+    min-height: 56px;
+    padding: 0 14px 0 16px;
+  }
+
+  .tm-set-mobile-detail .MuiTypography-root.tm-about-link-label {
+    font-size: 0.9375rem !important;
+    font-weight: 500 !important;
+  }
+
+  .tm-set-mobile-detail .tm-about-link-chevron {
+    font-size: 1.375rem !important;
+  }
+
+  .tm-set-mobile-detail > .tm-set-content,
+  .tm-set-mobile-detail > .tm-set-content > .tm-set-content-inner {
+    flex: 1;
+    min-height: 0;
+    gap: 16px;
+    padding: 2px 16px var(--tm-home-nav-clearance);
+    touch-action: pan-y;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tm-set-mobile-detail > .tm-set-content:has(> .tm-set-content-inner) {
+    padding: 0;
+  }
+
+  .tm-set-mobile-detail > .tm-home-page {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+  }
+
+  .tm-set-mobile-detail .tm-device-list,
+  .tm-set-mobile-detail .tm-agent-list {
+    padding-bottom: var(--tm-home-nav-clearance);
+  }
+
+  .tm-set-root.is-mobile .tm-set-card {
+    border-radius: 18px;
+    border-color: var(--tm-mobile-card-border);
+    background: var(--tm-mobile-card-bg);
+  }
+
+  .tm-set-root.is-mobile .tm-set-card-head {
+    gap: 12px;
+    padding: 14px 16px 8px;
+    align-items: center;
+  }
+
+  .tm-set-root.is-mobile .tm-set-card-head.is-toggle {
+    min-height: 60px;
+    padding: 12px 16px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .tm-set-root.is-mobile .tm-set-card-head.is-toggle:hover {
+    background-color: transparent;
+  }
+
+  .tm-set-root.is-mobile .tm-set-card-head.is-toggle:active {
+    background-color: var(--tm-bg-hover);
+  }
+
+  .tm-set-root.is-mobile .MuiTypography-root.tm-set-card-title {
+    font-size: 1.0625rem !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  .tm-set-root.is-mobile .tm-set-card-head:not(.is-toggle) .MuiTypography-root.tm-set-card-title {
+    color: var(--tm-mobile-card-tint) !important;
+  }
+
+  .tm-set-root.is-mobile .tm-set-card-head:not(.is-toggle) .MuiTypography-root.tm-set-card-desc {
+    display: none;
+  }
+
+  .tm-set-root.is-mobile .tm-set-card-head.is-toggle .MuiTypography-root.tm-set-card-title {
+    font-size: 0.9375rem !important;
+    font-weight: 500 !important;
+  }
+
+  .tm-set-root.is-mobile .tm-set-card-head.is-toggle .MuiTypography-root.tm-set-card-desc {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .tm-set-root.is-mobile .tm-set-card-body {
+    border-top: none;
+  }
+
+  .tm-set-root.is-mobile .tm-set-card-head.is-toggle + .tm-set-card-body {
+    border-top: 1px solid var(--tm-border-divider);
+  }
+
+  .tm-set-root.is-mobile .tm-set-row {
+    gap: 12px;
+    min-height: 60px;
+    padding: 10px 16px;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .tm-set-root.is-mobile .tm-set-row-main {
+    flex: 1;
+    gap: 3px;
+  }
+
+
+  .tm-set-root.is-mobile .MuiTypography-root.tm-set-row-hint {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .tm-set-root.is-mobile .tm-set-row-control {
+    width: auto;
+    max-width: 46%;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .tm-set-root.is-mobile .tm-set-row-control .tm-edit-field {
+    width: auto !important;
+    min-height: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  .tm-set-root.is-mobile .tm-set-row-control .tm-edit-field-value {
+    padding: 0 !important;
+    justify-content: flex-end;
+    text-align: right;
+    font-size: 0.9375rem !important;
+    color: var(--tm-text-secondary) !important;
+  }
+
+  .tm-set-root.is-mobile .tm-set-row-control .MuiSvgIcon-root.tm-edit-field-caret {
+    width: 1.375rem !important;
+    height: 1.375rem !important;
+    margin: 0 !important;
+    font-size: 1.375rem !important;
+    color: var(--tm-text-tertiary);
+    transform: rotate(-90deg);
+  }
+
+  .tm-set-root.is-mobile .tm-set-row:has(.tm-edit-field-input) {
+    gap: 8px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tm-set-root.is-mobile .tm-set-row:has(.tm-edit-field-input) .tm-set-row-control {
+    width: 100%;
+    max-width: none;
+  }
+
+  .tm-set-root.is-mobile .tm-set-row:has(.tm-edit-field-input) .tm-edit-field {
+    width: 100% !important;
+    min-height: 48px !important;
+    border: 1px solid var(--tm-mobile-card-border) !important;
+    border-radius: 12px !important;
+    background: var(--tm-mobile-card-sunken) !important;
+  }
+
+  .tm-set-root.is-mobile .tm-set-row:has(.tm-edit-field-input) .tm-edit-field-input {
+    padding: 0 12px !important;
+    font-size: 0.9375rem !important;
+  }
+
+  .tm-set-root.is-mobile .MuiSwitch-root.tm-set-switch {
+    width: 51px;
+    height: 31px;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .tm-set-root.is-mobile .MuiSwitch-root.tm-set-switch .MuiSwitch-switchBase {
+    padding: 2px;
+    transform: translateX(0);
+    transition: transform var(--tm-duration-medium) var(--tm-easing-ios);
+  }
+
+  .tm-set-root.is-mobile .MuiSwitch-root.tm-set-switch .MuiSwitch-switchBase.Mui-checked {
+    transform: translateX(20px);
+  }
+
+  .tm-set-root.is-mobile .MuiSwitch-root.tm-set-switch .MuiSwitch-thumb {
+    width: 27px;
+    height: 27px;
+    color: var(--tm-text-primary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+  }
+
+  .tm-set-root.is-mobile .MuiSwitch-root.tm-set-switch .Mui-checked .MuiSwitch-thumb {
+    color: var(--tm-text-on-accent);
+  }
+
+  .tm-set-root.is-mobile .MuiSwitch-root.tm-set-switch .MuiSwitch-track {
+    border-radius: 15.5px;
+    background-color: var(--tm-bg-active) !important;
+    transition: background-color var(--tm-duration-medium) var(--tm-easing-ios);
+  }
+
+  .tm-set-root.is-mobile .MuiSwitch-root.tm-set-switch .Mui-checked + .MuiSwitch-track {
+    background-color: var(--tm-status-success) !important;
+  }
+
+  .tm-set-root.is-mobile .tm-set-row-control .MuiButton-root.tm-btn {
+    width: auto;
+    min-height: 36px;
+    padding: 0 14px;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .MuiButtonBase-root.tm-set-nav-row {
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    gap: 12px;
+    padding: 12px 12px 12px 16px;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    box-sizing: border-box;
+    touch-action: pan-y;
+  }
+
+  .MuiButtonBase-root.tm-set-nav-row + .MuiButtonBase-root.tm-set-nav-row {
+    border-top: 1px solid var(--tm-border-divider);
+  }
+
+  .MuiButtonBase-root.tm-set-nav-row:active {
+    background-color: var(--tm-bg-hover);
+  }
+
+
+  .MuiTypography-root.tm-set-nav-row-hint {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+    color: var(--tm-text-tertiary) !important;
+  }
+
+  .tm-set-nav-row-chevron {
+    flex-shrink: 0;
+    font-size: 1.375rem !important;
+    color: var(--tm-text-tertiary);
+  }
+
+  .tm-set-saved-item-actions {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+}
+
+.tm-about-version-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    border: 1px solid var(--tm-border-divider);
+    background: var(--tm-bg-elevated);
+    margin-bottom: 16px;
+}
+
+.tm-about-product {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em;
+}
+
+.tm-about-version {
+    font-size: 0.8125rem !important;
+    color: var(--tm-text-secondary);
+}
+
+.tm-about-check-note {
+    min-height: 18px;
+    font-size: 0.75rem !important;
+    color: var(--tm-text-tertiary);
+}
+
+.tm-about-links {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    border: 1px solid var(--tm-border-divider);
+    background: var(--tm-bg-elevated);
+    overflow: hidden;
+}
+
+.MuiButtonBase-root.tm-about-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 13px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--tm-border-divider);
+}
+
+.MuiButtonBase-root.tm-about-link:last-child {
+    border-bottom: none;
+}
+
+.MuiButtonBase-root.tm-about-link:hover {
+    background: var(--tm-bg-hover, rgba(235, 235, 245, 0.04));
+}
+
+.MuiButtonBase-root.tm-about-link.Mui-disabled {
+    opacity: 0.4;
+}
+
+.tm-about-link-label {
+    font-size: 0.875rem !important;
+}
+
+.tm-about-link-chevron {
+    font-size: 1.1rem !important;
+    color: var(--tm-text-tertiary);
+}

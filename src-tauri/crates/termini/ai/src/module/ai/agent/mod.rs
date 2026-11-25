@@ -1,0 +1,13 @@
+pub mod prompts;
+pub mod agent_base;
+pub mod agent_fold;
+pub mod agent_main;
+pub mod agent_alert;
+pub mod agent_audit;
+pub mod agent_build;
+pub mod agent_direct;
+pub mod agent_router;
+pub mod agent_suggest;
+pub mod agent_discover;
+pub mod agent_supervise;
+pub use agent_base::AgentRole;

@@ -1,0 +1,11 @@
+(function_declaration name: (identifier) @def.function)
+(generator_function_declaration name: (identifier) @def.function)
+(method_definition name: (property_identifier) @def.method)
+(class_declaration name: (type_identifier) @def.class)
+(interface_declaration name: (type_identifier) @def.interface)
+(type_alias_declaration name: (type_identifier) @def.type)
+(enum_declaration name: (identifier) @def.enum)
+(lexical_declaration (variable_declarator name: (identifier) @def.variable))
+(call_expression function: (identifier) @ref.call)
+(call_expression function: (member_expression property: (property_identifier) @ref.call))
+(type_identifier) @ref.type

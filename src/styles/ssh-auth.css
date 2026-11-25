@@ -1,0 +1,45 @@
+/* SSH 认证弹框 */
+
+.MuiPaper-root.tm-ssh-auth-dialog-paper {
+  width: 100%;
+  max-width: var(--tm-dialog-width);
+  background: var(--tm-glass-dialog-bg);
+  background-color: var(--tm-glass-dialog-bg);
+  background-image: none;
+  -webkit-backdrop-filter: var(--tm-glass-dialog-blur);
+  backdrop-filter: var(--tm-glass-dialog-blur);
+  border: 1px solid var(--tm-glass-dialog-border);
+  box-shadow: var(--tm-glass-dialog-shadow);
+}
+
+.MuiButtonBase-root.tm-protocol-auth-method-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--tm-border-subtle);
+  background-color: var(--tm-bg-button);
+  box-sizing: border-box;
+  text-align: left;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.MuiButtonBase-root.tm-protocol-auth-method-option:hover {
+  background-color: var(--tm-bg-hover);
+}
+
+.MuiButtonBase-root.tm-protocol-auth-method-option.is-selected {
+  border-color: var(--tm-border-accent);
+  background-color: var(--tm-bg-selected);
+}
+
+
+html.tm-platform-mobile {
+  .MuiButtonBase-root.tm-protocol-auth-method-option {
+    min-height: 56px;
+    padding: 12px;
+  }
+}

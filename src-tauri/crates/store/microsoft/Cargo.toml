@@ -1,0 +1,12 @@
+[package]
+name = "store-microsoft"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+store-core = { path = "../core" }
+tokio = { version = "1.52.2", features = ["rt"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows = { version = "0.62.2", features = ["Services_Store", "Foundation", "Foundation_Collections", "Win32_Foundation", "Win32_UI_Shell"] }
+windows-collections = "0.3.2"

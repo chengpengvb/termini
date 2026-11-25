@@ -1,0 +1,13 @@
+[package]
+name = "summer-shim"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# extract.rs 里有一处 `summer::tracing::warn!`。基准只需要它能编译,
+# 为此拉进真正的 summer(web 框架)不值得, 这里用同名空壳顶掉。
+[lib]
+name = "summer"
+path = "src/lib.rs"
+
+[dependencies]

@@ -1,0 +1,7 @@
+export const RESP_EVENT_SERIAL = {
+  ON_OPEN: 100,
+  ON_CLOSE: 101,
+  ON_ERROR: 102,
+  ON_DATA: 103,
+  ON_PORTS_CHANGED: 120,
+} as const;

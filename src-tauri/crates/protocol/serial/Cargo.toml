@@ -1,0 +1,13 @@
+[package]
+name = "protocol-serial"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.103"
+thiserror = "2.0.18"
+serde = { version = "1", features = ["derive"] }
+tokio = { version = "1.52.2", features = ["rt", "io-util", "sync", "time"] }
+
+[target.'cfg(any(target_os = "windows", target_os = "macos", target_os = "linux"))'.dependencies]
+serial2 = "0.2.37"

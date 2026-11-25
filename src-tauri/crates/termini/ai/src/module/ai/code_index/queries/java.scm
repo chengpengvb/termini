@@ -1,0 +1,6 @@
+(class_declaration (identifier) @def.class)
+(interface_declaration (identifier) @def.interface)
+(enum_declaration (identifier) @def.enum)
+(method_declaration (identifier) @def.method)
+(constructor_declaration (identifier) @def.constructor)
+(method_invocation (identifier) @ref.call)

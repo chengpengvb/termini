@@ -1,0 +1,22 @@
+[package]
+name = "termini-base"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.103"
+futures = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+async-trait = "0.1.89"
+parking_lot = "0.12.5"
+dashmap = "6.2.1"
+inventory = "0.3.24"
+summer = "0.7.1"
+tauri = { version = "2.11.5", features = [] }
+sea-orm = { version = "1.1.20", features = ["macros", "sqlx-sqlite", "runtime-tokio-rustls"] }
+termini-core = { path = "../core" }
+termini-macros = { path = "../../../macros" }
+
+[dev-dependencies]
+tokio = { version = "1.52.2", features = ["rt-multi-thread"] }
